@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5078A3EC20E3631400C4A686 /* WhatsNewKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; };
-		5078A3F120E3631400C4A686 /* WhatsNewKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A3F020E3631400C4A686 /* WhatsNewKitTests.swift */; };
 		5078A3F320E3631400C4A686 /* WhatsNewKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5078A3E520E3631400C4A686 /* WhatsNewKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5078A40320E3635E00C4A686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A40220E3635E00C4A686 /* AppDelegate.swift */; };
 		5078A40520E3636000C4A686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5078A40420E3636000C4A686 /* Assets.xcassets */; };
@@ -30,7 +29,6 @@
 		5078A3E520E3631400C4A686 /* WhatsNewKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhatsNewKit.h; sourceTree = "<group>"; };
 		5078A3E620E3631400C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5078A3EB20E3631400C4A686 /* WhatsNewKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsNewKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5078A3F020E3631400C4A686 /* WhatsNewKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewKitTests.swift; sourceTree = "<group>"; };
 		5078A3F220E3631400C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5078A40020E3635E00C4A686 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5078A40220E3635E00C4A686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +36,7 @@
 		5078A40720E3636000C4A686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5078A40920E3636000C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5078A40A20E3636000C4A686 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		5078A40E20E363B800C4A686 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +68,7 @@
 		5078A3D820E3631400C4A686 = {
 			isa = PBXGroup;
 			children = (
+				5078A40E20E363B800C4A686 /* LICENSE.md */,
 				5078A3E420E3631400C4A686 /* WhatsNewKit */,
 				5078A3EF20E3631400C4A686 /* WhatsNewKitTests */,
 				5078A40120E3635E00C4A686 /* Example */,
@@ -98,7 +98,6 @@
 		5078A3EF20E3631400C4A686 /* WhatsNewKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				5078A3F020E3631400C4A686 /* WhatsNewKitTests.swift */,
 				5078A3F220E3631400C4A686 /* Info.plist */,
 			);
 			path = WhatsNewKitTests;
@@ -262,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5078A3F120E3631400C4A686 /* WhatsNewKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

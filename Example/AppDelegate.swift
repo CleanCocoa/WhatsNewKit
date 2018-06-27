@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  Example
-//
-//  Created by Christian Tietze on 27.06.18.
-//  Copyright © 2018 Christian Tietze. All rights reserved.
-//
+//  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
 import Cocoa
 
