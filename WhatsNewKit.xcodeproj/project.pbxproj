@@ -12,6 +12,8 @@
 		5078A40320E3635E00C4A686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A40220E3635E00C4A686 /* AppDelegate.swift */; };
 		5078A40520E3636000C4A686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5078A40420E3636000C4A686 /* Assets.xcassets */; };
 		5078A40820E3636000C4A686 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5078A40620E3636000C4A686 /* MainMenu.xib */; };
+		5078A40F20E3641800C4A686 /* WhatsNewKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; };
+		5078A41020E3641800C4A686 /* WhatsNewKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +24,28 @@
 			remoteGlobalIDString = 5078A3E120E3631400C4A686;
 			remoteInfo = WhatsNewKit;
 		};
+		5078A41120E3641800C4A686 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5078A3D920E3631400C4A686 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5078A3E120E3631400C4A686;
+			remoteInfo = WhatsNewKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5078A41320E3641800C4A686 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5078A41020E3641800C4A686 /* WhatsNewKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5078A3E220E3631400C4A686 /* WhatsNewKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhatsNewKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5078A40F20E3641800C4A686 /* WhatsNewKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +196,12 @@
 				5078A3FC20E3635E00C4A686 /* Sources */,
 				5078A3FD20E3635E00C4A686 /* Frameworks */,
 				5078A3FE20E3635E00C4A686 /* Resources */,
+				5078A41320E3641800C4A686 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5078A41220E3641800C4A686 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -279,6 +305,11 @@
 			isa = PBXTargetDependency;
 			target = 5078A3E120E3631400C4A686 /* WhatsNewKit */;
 			targetProxy = 5078A3ED20E3631400C4A686 /* PBXContainerItemProxy */;
+		};
+		5078A41220E3641800C4A686 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5078A3E120E3631400C4A686 /* WhatsNewKit */;
+			targetProxy = 5078A41120E3641800C4A686 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
