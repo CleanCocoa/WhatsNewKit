@@ -121,7 +121,7 @@
 			children = (
 				5078A3E520E3631400C4A686 /* WhatsNewKit.h */,
 				5078A41420E364F400C4A686 /* Version.swift */,
-				5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */,
+				50A86F2720E36E31004CBA4B /* Util */,
 				5078A3E620E3631400C4A686 /* Info.plist */,
 			);
 			path = WhatsNewKit;
@@ -146,6 +146,14 @@
 				5078A40A20E3636000C4A686 /* Example.entitlements */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		50A86F2720E36E31004CBA4B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
