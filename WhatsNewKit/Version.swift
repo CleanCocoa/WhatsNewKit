@@ -35,6 +35,17 @@ extension Version {
     }
 }
 
+import class Foundation.Bundle
+
+extension Version {
+    public init(bundle: Bundle) throws {
+        guard let versionString = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+            else { throw VersionFromStringError(message: "Version.init(bundle:) expects a NSBundle with \"CFBundleShortVersionString\" set") }
+
+        try self.init(string: versionString)
+    }
+}
+
 public func ==(lhs: Version, rhs: Version) -> Bool {
 
     return lhs.major == rhs.major
