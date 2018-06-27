@@ -31,6 +31,8 @@ func applicationDidFinishLaunching(_ aNotification: Notification) {
 }
 ```
 
+## How to Use
+
 ### Behavior
 
 The main intention of WhatsNewKit is to display update information to existing users.

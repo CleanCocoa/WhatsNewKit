@@ -69,7 +69,7 @@
 		5078A40720E3636000C4A686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5078A40920E3636000C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5078A40A20E3636000C4A686 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
-		5078A40E20E363B800C4A686 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		5078A40E20E363B800C4A686 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5078A41420E364F400C4A686 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		5078A41620E3652B00C4A686 /* VersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
 		5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				50A86F3D20E3B002004CBA4B /* README.md */,
-				5078A40E20E363B800C4A686 /* LICENSE.md */,
+				5078A40E20E363B800C4A686 /* LICENSE */,
 				5078A3E420E3631400C4A686 /* WhatsNewKit */,
 				5078A3EF20E3631400C4A686 /* WhatsNewKitTests */,
 				5078A40120E3635E00C4A686 /* Example */,
