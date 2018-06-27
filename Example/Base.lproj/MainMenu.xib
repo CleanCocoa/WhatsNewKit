@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,12 +12,11 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Example" customModuleProvider="target">
             <connections>
+                <outlet property="appWindowController" destination="GDn-yg-4pq" id="3Cf-67-nck"/>
                 <outlet property="updateView" destination="Ebz-zm-N5d" id="Zbj-Yh-16M"/>
-                <outlet property="versionLabel" destination="PWX-pJ-Vx3" id="k8H-DW-Ukd"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -685,49 +685,155 @@
         <window title="Example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="482" height="268"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="502" height="239"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-al-2lj">
-                        <rect key="frame" x="18" y="323" width="131" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current App Version:" id="62u-gf-KQV">
+                        <rect key="frame" x="18" y="202" width="195" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Current App Version:" id="62u-gf-KQV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="in8-vm-cMa">
+                        <rect key="frame" x="18" y="177" width="195" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Last known WhatsNew Version:" id="EAy-a3-TRV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V4O-Z9-8fF">
+                        <rect key="frame" x="18" y="152" width="195" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Is first launch:" id="68H-zD-JfJ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PWX-pJ-Vx3">
-                        <rect key="frame" x="155" y="323" width="34" height="17"/>
+                        <rect key="frame" x="219" y="202" width="34" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.0.0" id="Xkz-ud-SsU">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gpP-56-eaa">
+                        <rect key="frame" x="219" y="177" width="34" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.0.0" id="yAJ-nO-5L1">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-es-tDk">
-                        <rect key="frame" x="14" y="287" width="187" height="32"/>
-                        <buttonCell key="cell" type="push" title="Force Show What's New" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OOF-dK-7Bd">
+                        <rect key="frame" x="14" y="44" width="198" height="32"/>
+                        <buttonCell key="cell" type="push" title="Force Display What's New" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OOF-dK-7Bd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="forceShowWhatsNew:" target="Voe-Tx-rLC" id="GQw-Id-Ov8"/>
+                            <action selector="forceShowWhatsNew:" target="GDn-yg-4pq" id="UXp-ph-FOV"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X5q-ys-RiH">
+                        <rect key="frame" x="214" y="44" width="147" height="32"/>
+                        <buttonCell key="cell" type="push" title="Display If Needed" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pti-S4-hO2">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="displayWhatsNewIfNeeded:" target="GDn-yg-4pq" id="fWX-Dh-ACj"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W6d-eF-wlH">
+                        <rect key="frame" x="14" y="13" width="118" height="32"/>
+                        <buttonCell key="cell" type="push" title="Save Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gGI-Wb-xbZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="saveUpdate:" target="GDn-yg-4pq" id="Xn1-c7-Zw1"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-le-161">
+                        <rect key="frame" x="134" y="13" width="193" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset WhatsNew Version" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZVn-rT-jum">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetWhatsNewVersion:" target="GDn-yg-4pq" id="6hU-AD-7SY"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-7r-iiq">
+                        <rect key="frame" x="329" y="13" width="159" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset isFirstLaunch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="McI-vA-p7V">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetFirstLaunchVersion:" target="GDn-yg-4pq" id="h2n-to-bHT"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-OX-9pL">
+                        <rect key="frame" x="219" y="151" width="22" height="18"/>
+                        <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="ABj-rb-SyF">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-rz-vJp">
+                        <rect key="frame" x="18" y="92" width="466" height="40"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="gvL-2s-uP2">
+                            <font key="font" metaFont="systemMedium" size="13"/>
+                            <string key="title">This is your first launch. Update notices won't appear on 1st launch.
+Use "Reset WhatsNew Version" and run again for a non-first launch.</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TJc-rz-vJp" secondAttribute="trailing" constant="20" id="3GQ-rD-8qD"/>
                     <constraint firstItem="BCg-al-2lj" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="4yP-My-Pm1"/>
+                    <constraint firstItem="in8-vm-cMa" firstAttribute="top" secondItem="BCg-al-2lj" secondAttribute="bottom" constant="8" id="6M8-aj-eKN"/>
+                    <constraint firstItem="gi2-le-161" firstAttribute="baseline" secondItem="W6d-eF-wlH" secondAttribute="baseline" id="7uW-0I-QLr"/>
+                    <constraint firstItem="8u6-es-tDk" firstAttribute="top" secondItem="V4O-Z9-8fF" secondAttribute="bottom" constant="80" id="ANX-Hk-JuD"/>
+                    <constraint firstItem="ID8-7r-iiq" firstAttribute="leading" secondItem="gi2-le-161" secondAttribute="trailing" constant="14" id="FGP-Sy-7FF"/>
+                    <constraint firstItem="ID8-7r-iiq" firstAttribute="baseline" secondItem="gi2-le-161" secondAttribute="baseline" id="MGV-Fr-5fp"/>
+                    <constraint firstItem="V4O-Z9-8fF" firstAttribute="leading" secondItem="in8-vm-cMa" secondAttribute="leading" id="SHa-Gs-58X"/>
                     <constraint firstItem="8u6-es-tDk" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="leading" id="T0U-EF-gg3"/>
+                    <constraint firstItem="dgm-OX-9pL" firstAttribute="leading" secondItem="gpP-56-eaa" secondAttribute="leading" id="Tdh-qQ-RXS"/>
+                    <constraint firstItem="X5q-ys-RiH" firstAttribute="leading" secondItem="8u6-es-tDk" secondAttribute="trailing" constant="14" id="VJ7-MZ-NID"/>
+                    <constraint firstItem="8u6-es-tDk" firstAttribute="top" secondItem="TJc-rz-vJp" secondAttribute="bottom" constant="20" id="Vh8-25-Drg"/>
+                    <constraint firstItem="in8-vm-cMa" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="leading" id="Xw7-wD-vpA"/>
+                    <constraint firstItem="W6d-eF-wlH" firstAttribute="top" secondItem="8u6-es-tDk" secondAttribute="bottom" constant="10" id="XzE-pn-kb8"/>
+                    <constraint firstAttribute="bottom" secondItem="W6d-eF-wlH" secondAttribute="bottom" constant="20" id="Ze1-dz-Pym"/>
+                    <constraint firstItem="V4O-Z9-8fF" firstAttribute="top" secondItem="in8-vm-cMa" secondAttribute="bottom" constant="8" id="Zxg-gT-yNh"/>
+                    <constraint firstItem="X5q-ys-RiH" firstAttribute="baseline" secondItem="8u6-es-tDk" secondAttribute="baseline" id="a5D-f1-QEa"/>
+                    <constraint firstItem="gpP-56-eaa" firstAttribute="leading" secondItem="PWX-pJ-Vx3" secondAttribute="leading" id="aDK-hb-7AI"/>
+                    <constraint firstItem="dgm-OX-9pL" firstAttribute="baseline" secondItem="V4O-Z9-8fF" secondAttribute="baseline" id="c72-fc-HzD"/>
+                    <constraint firstItem="in8-vm-cMa" firstAttribute="baseline" secondItem="gpP-56-eaa" secondAttribute="baseline" id="eiX-HR-uvv"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PWX-pJ-Vx3" secondAttribute="trailing" constant="20" id="fV4-A0-HF6"/>
                     <constraint firstItem="PWX-pJ-Vx3" firstAttribute="baseline" secondItem="BCg-al-2lj" secondAttribute="baseline" id="fp4-v7-VLp"/>
+                    <constraint firstItem="gi2-le-161" firstAttribute="leading" secondItem="W6d-eF-wlH" secondAttribute="trailing" constant="14" id="fuj-NY-0U4"/>
+                    <constraint firstItem="TJc-rz-vJp" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="leading" id="iLz-1j-nk1"/>
+                    <constraint firstItem="V4O-Z9-8fF" firstAttribute="trailing" secondItem="in8-vm-cMa" secondAttribute="trailing" id="k2d-it-7h2"/>
+                    <constraint firstItem="TJc-rz-vJp" firstAttribute="top" secondItem="V4O-Z9-8fF" secondAttribute="bottom" constant="20" id="lFM-H3-1SP"/>
                     <constraint firstItem="PWX-pJ-Vx3" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="trailing" constant="10" id="oVs-ZZ-cjQ"/>
-                    <constraint firstItem="8u6-es-tDk" firstAttribute="top" secondItem="BCg-al-2lj" secondAttribute="bottom" constant="8" id="yaU-t8-Fs4"/>
+                    <constraint firstItem="BCg-al-2lj" firstAttribute="trailing" secondItem="in8-vm-cMa" secondAttribute="trailing" id="pda-Lq-Nrx"/>
+                    <constraint firstItem="W6d-eF-wlH" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="leading" id="qTN-4w-IdT"/>
+                    <constraint firstAttribute="trailing" secondItem="ID8-7r-iiq" secondAttribute="trailing" constant="20" id="tHw-Rt-Vnt"/>
                     <constraint firstItem="BCg-al-2lj" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="z1v-HE-JUq"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="118" y="165"/>
         </window>
         <customView id="Ebz-zm-N5d" customClass="UpdateView" customModule="WhatsNewKit">
             <rect key="frame" x="0.0" y="0.0" width="474" height="265"/>
@@ -785,6 +891,15 @@
             </constraints>
             <point key="canvasLocation" x="-432" y="153.5"/>
         </customView>
+        <customObject id="GDn-yg-4pq" customClass="AppWindowController" customModule="Example" customModuleProvider="target">
+            <connections>
+                <outlet property="appVersionLabel" destination="PWX-pJ-Vx3" id="9j5-2K-wVB"/>
+                <outlet property="isFirstLaunchCheckbox" destination="dgm-OX-9pL" id="zqD-z1-uDf"/>
+                <outlet property="isFirstLaunchLabel" destination="TJc-rz-vJp" id="wys-0u-TmC"/>
+                <outlet property="whatsNewVersionLabel" destination="gpP-56-eaa" id="LDo-5y-EKJ"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="ygd-9l-9vb"/>
+            </connections>
+        </customObject>
     </objects>
     <resources>
         <image name="screenshot" width="316" height="404"/>

@@ -23,6 +23,7 @@
 		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 		50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3020E3796C004CBA4B /* UpdateTests.swift */; };
 		50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */; };
+		50A86F3C20E3A2DD004CBA4B /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
 		50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewWindowController.swift; sourceTree = "<group>"; };
+		50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				5078A40220E3635E00C4A686 /* AppDelegate.swift */,
+				50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */,
 				5078A40420E3636000C4A686 /* Assets.xcassets */,
 				5078A40620E3636000C4A686 /* MainMenu.xib */,
 				5078A40920E3636000C4A686 /* Info.plist */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5078A40320E3635E00C4A686 /* AppDelegate.swift in Sources */,
+				50A86F3C20E3A2DD004CBA4B /* AppWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,28 +6,35 @@ import WhatsNewKit
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-    @IBOutlet weak var versionLabel: NSTextField!
+    @IBOutlet var appWindowController: AppWindowController!
     @IBOutlet weak var updateView: UpdateView!
 
-    lazy var v130: Update = Update(version: Version(1, 3, 0), view: self.updateView)
+    // `Update.version <= app version` indicates the information is displayable
+    // in the current release.
+    lazy var v220: Update = Update(version: Version(2, 2, 0), view: self.updateView)
+
     lazy var whatsNew: WhatsNew = {
-        // Use this in production code instead:
+        // Use this in production code:
         //     let configuration = WhatsNew.Configuration(userDefaults: UserDefaults.standard, appBundle: Bundle.main)
-        let configuration = WhatsNew.Configuration(
-            isFirstLaunch: false,
-            appVersion: Version(2,0,0),
-            lastWhatsNewVersion: nil)
+
+        // Use this for testing:
+        //     let configuration = WhatsNew.Configuration(
+        //        isFirstLaunch: false,
+        //        appVersion: Version(2,0,0),
+        //        lastWhatsNewVersion: nil)
+
+        let configuration = WhatsNew.Configuration(userDefaults: UserDefaults.standard, appBundle: Bundle.main)
         return WhatsNew(configuration: configuration)
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        versionLabel.stringValue = Version(bundle: Bundle.main)!.string
 
-        whatsNew.displayIfNeeded(update: v130)
+        appWindowController.whatsNew = whatsNew
+        appWindowController.update = v220
+        
+        whatsNew.displayIfNeeded(update: v220)
+        UserDefaults.standard.isFirstLaunch = false
+        v220.saveAsLatest(userDefaults: UserDefaults.standard)
     }
-    
-    @IBAction func forceShowWhatsNew(_ sender: Any) {
-        whatsNew.display(update: v130)
-    }
+
 }
