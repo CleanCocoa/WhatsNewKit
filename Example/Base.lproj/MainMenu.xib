@@ -687,8 +687,8 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="482" height="268"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="502" height="239"/>
+            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="528" height="239"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-al-2lj">
@@ -751,7 +751,7 @@
                             <action selector="displayWhatsNewIfNeeded:" target="GDn-yg-4pq" id="fWX-Dh-ACj"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W6d-eF-wlH">
+                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6d-eF-wlH">
                         <rect key="frame" x="14" y="13" width="118" height="32"/>
                         <buttonCell key="cell" type="push" title="Save Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gGI-Wb-xbZ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -761,7 +761,7 @@
                             <action selector="saveUpdate:" target="GDn-yg-4pq" id="Xn1-c7-Zw1"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-le-161">
+                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-le-161">
                         <rect key="frame" x="134" y="13" width="193" height="32"/>
                         <buttonCell key="cell" type="push" title="Reset WhatsNew Version" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZVn-rT-jum">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -771,7 +771,7 @@
                             <action selector="resetWhatsNewVersion:" target="GDn-yg-4pq" id="6hU-AD-7SY"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-7r-iiq">
+                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-7r-iiq">
                         <rect key="frame" x="329" y="13" width="159" height="32"/>
                         <buttonCell key="cell" type="push" title="Reset isFirstLaunch" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="McI-vA-p7V">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -789,11 +789,11 @@
                         </buttonCell>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-rz-vJp">
-                        <rect key="frame" x="18" y="92" width="466" height="40"/>
+                        <rect key="frame" x="18" y="92" width="492" height="40"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="gvL-2s-uP2">
                             <font key="font" metaFont="systemMedium" size="13"/>
-                            <string key="title">This is your first launch. Update notices won't appear on 1st launch.
-Use "Reset WhatsNew Version" and run again for a non-first launch.</string>
+                            <string key="title">This was your first launch. Update notices won't appear. To see the notice,
+use "Reset WhatsNew Version" and "Display If Needed", or start the app again.</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
