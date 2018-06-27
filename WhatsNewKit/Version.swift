@@ -17,17 +17,12 @@ public struct Version: Equatable, Comparable {
 }
 
 extension Version {
-    public struct VersionFromStringError: Swift.Error {
-        public let message: String
-    }
-
-    public init(string: String) throws {
-
+    public init?(string: String) {
         let parts = string.split(maxSplits: 3, omittingEmptySubsequences: false, whereSeparator: { $0 == "." })
             .compactMap { Int($0) }
             .map(abs)
 
-        guard parts.count > 0 else { throw VersionFromStringError(message: "Version.init(string:) expects at least one number") }
+        guard parts.count > 0 else { return nil }
 
         self.init(parts[safe: 0] ?? 0,
                   parts[safe: 1] ?? 0,
@@ -38,11 +33,10 @@ extension Version {
 import class Foundation.Bundle
 
 extension Version {
-    public init(bundle: Bundle) throws {
-        guard let versionString = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-            else { throw VersionFromStringError(message: "Version.init(bundle:) expects a NSBundle with \"CFBundleShortVersionString\" set") }
+    public init?(bundle: Bundle) {
+        guard let versionString = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else { return nil }
 
-        try self.init(string: versionString)
+        self.init(string: versionString)
     }
 }
 
