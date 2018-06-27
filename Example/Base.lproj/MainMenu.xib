@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Example" customModuleProvider="target">
             <connections>
+                <outlet property="updateView" destination="Ebz-zm-N5d" id="Zbj-Yh-16M"/>
                 <outlet property="versionLabel" destination="PWX-pJ-Vx3" id="k8H-DW-Ukd"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -679,6 +680,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-186" y="-178"/>
         </menu>
         <window title="Example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -705,15 +707,86 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8u6-es-tDk">
+                        <rect key="frame" x="14" y="287" width="187" height="32"/>
+                        <buttonCell key="cell" type="push" title="Force Show What's New" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OOF-dK-7Bd">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="forceShowWhatsNew:" target="Voe-Tx-rLC" id="GQw-Id-Ov8"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BCg-al-2lj" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="4yP-My-Pm1"/>
+                    <constraint firstItem="8u6-es-tDk" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="leading" id="T0U-EF-gg3"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PWX-pJ-Vx3" secondAttribute="trailing" constant="20" id="fV4-A0-HF6"/>
                     <constraint firstItem="PWX-pJ-Vx3" firstAttribute="baseline" secondItem="BCg-al-2lj" secondAttribute="baseline" id="fp4-v7-VLp"/>
                     <constraint firstItem="PWX-pJ-Vx3" firstAttribute="leading" secondItem="BCg-al-2lj" secondAttribute="trailing" constant="10" id="oVs-ZZ-cjQ"/>
+                    <constraint firstItem="8u6-es-tDk" firstAttribute="top" secondItem="BCg-al-2lj" secondAttribute="bottom" constant="8" id="yaU-t8-Fs4"/>
                     <constraint firstItem="BCg-al-2lj" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="z1v-HE-JUq"/>
                 </constraints>
             </view>
         </window>
+        <customView id="Ebz-zm-N5d" customClass="UpdateView" customModule="WhatsNewKit">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="265"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="De8-FC-alD">
+                    <rect key="frame" x="79" y="196" width="316" height="29"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What's New in Example App" id="0Iv-sS-uKp">
+                        <font key="font" metaFont="systemBold" size="24"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gki-JT-dm2">
+                    <rect key="frame" x="208" y="61" width="238" height="85"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="There's not much new in this version, but it's awesome. You get a lot of new features, and will not miss many old ones." id="0hP-Ah-D7v">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="T8L-ep-VLW">
+                    <rect key="frame" x="373" y="13" width="87" height="32"/>
+                    <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CDn-pX-U1H">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissWhatsNew:" target="Ebz-zm-N5d" id="V7J-tj-QyR"/>
+                    </connections>
+                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haH-JX-TfH">
+                    <rect key="frame" x="0.0" y="0.0" width="230" height="176"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="176" id="Cej-8F-0C6"/>
+                        <constraint firstAttribute="width" constant="230" id="reV-cb-gZO"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topRight" image="screenshot" id="fTO-ui-ncI"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="haH-JX-TfH" secondAttribute="bottom" id="8pC-2n-F5b"/>
+                <constraint firstItem="T8L-ep-VLW" firstAttribute="top" secondItem="gki-JT-dm2" secondAttribute="bottom" constant="20" id="Ir8-UX-RZC"/>
+                <constraint firstItem="De8-FC-alD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ebz-zm-N5d" secondAttribute="leading" constant="40" id="PQA-vd-yti"/>
+                <constraint firstItem="T8L-ep-VLW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="haH-JX-TfH" secondAttribute="trailing" constant="20" id="Q7G-GO-0HZ"/>
+                <constraint firstItem="De8-FC-alD" firstAttribute="top" secondItem="Ebz-zm-N5d" secondAttribute="top" constant="40" id="RPC-KN-Rqb"/>
+                <constraint firstItem="haH-JX-TfH" firstAttribute="leading" secondItem="Ebz-zm-N5d" secondAttribute="leading" id="X2e-S8-bXA"/>
+                <constraint firstItem="De8-FC-alD" firstAttribute="centerX" secondItem="Ebz-zm-N5d" secondAttribute="centerX" id="XLn-d8-5VN"/>
+                <constraint firstItem="gki-JT-dm2" firstAttribute="top" secondItem="haH-JX-TfH" secondAttribute="top" constant="30" id="ZMS-H7-O5I"/>
+                <constraint firstItem="gki-JT-dm2" firstAttribute="leading" secondItem="haH-JX-TfH" secondAttribute="trailing" constant="-20" id="cDa-NA-vi3"/>
+                <constraint firstItem="haH-JX-TfH" firstAttribute="top" secondItem="De8-FC-alD" secondAttribute="bottom" constant="20" id="lMM-sR-l8v"/>
+                <constraint firstAttribute="trailing" secondItem="gki-JT-dm2" secondAttribute="trailing" constant="30" id="qv9-mM-UlN"/>
+                <constraint firstAttribute="trailing" secondItem="T8L-ep-VLW" secondAttribute="trailing" constant="20" id="xrx-u6-nAX"/>
+                <constraint firstAttribute="bottom" secondItem="T8L-ep-VLW" secondAttribute="bottom" constant="20" id="yqi-H9-Kqk"/>
+            </constraints>
+            <point key="canvasLocation" x="-432" y="153.5"/>
+        </customView>
     </objects>
+    <resources>
+        <image name="screenshot" width="316" height="404"/>
+    </resources>
 </document>

@@ -133,7 +133,7 @@
 				50A86F2820E36E60004CBA4B /* WhatsNew.swift */,
 				5078A41420E364F400C4A686 /* Version.swift */,
 				5078A41A20E3662700C4A686 /* Update.swift */,
-				5078A41E20E3683100C4A686 /* UpdateView.swift */,
+				50A86F3220E380B5004CBA4B /* UI */,
 				50A86F2720E36E31004CBA4B /* Util */,
 				5078A3E620E3631400C4A686 /* Info.plist */,
 			);
@@ -169,6 +169,14 @@
 				5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		50A86F3220E380B5004CBA4B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5078A41E20E3683100C4A686 /* UpdateView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
