@@ -27,6 +27,11 @@ public struct WhatsNew {
     public func display(update: Update) {
         WhatsNewWindowController.shared.show(update: update)
     }
+
+    public func register(update: Update, userDefaults: UserDefaults = .standard) {
+        userDefaults.isFirstLaunch = false
+        update.saveAsLatest(userDefaults: userDefaults)
+    }
 }
 
 

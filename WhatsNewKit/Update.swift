@@ -18,10 +18,11 @@ public struct Update {
         if let lastWhatsNewVersion = configuration.lastWhatsNewVersion {
             return version > lastWhatsNewVersion
         }
+        
         return true
     }
 
-    public func saveAsLatest(userDefaults: UserDefaults) {
+    public func saveAsLatest(userDefaults: UserDefaults = .standard) {
         userDefaults.whatsNewVersion = self.version
     }
 }

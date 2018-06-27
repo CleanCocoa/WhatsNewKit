@@ -31,10 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         appWindowController.whatsNew = whatsNew
         appWindowController.update = v220
-        
+
+        // Show upon launch, if needed
         whatsNew.displayIfNeeded(update: v220)
-        UserDefaults.standard.isFirstLaunch = false
-        v220.saveAsLatest(userDefaults: UserDefaults.standard)
+
+        // Store as known version
+        whatsNew.register(update: v220, userDefaults: UserDefaults.standard)
     }
 
 }
