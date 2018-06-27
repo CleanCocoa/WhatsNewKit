@@ -7,8 +7,10 @@ import WhatsNewKit
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    @IBOutlet weak var versionLabel: NSTextField!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+        let appVersion = Version(bundle: Bundle.main) ?? Version(1,0,0)
+        versionLabel.stringValue = appVersion.string
     }
 }
