@@ -6,6 +6,10 @@ public struct WhatsNew {
         public let appVersion: Version
         public let lastWhatsNewVersion: Version?
 
+        /// - parameters:
+        ///    - isFirstLaunch: Determines if this is the first launch of the app, _not_ the first time a notice is shown.
+        ///    - appVersion: The current app bundle's version, used to figure out what is "new".
+        ///    - lastWhatsNewVersion: The last time a "What's New" update notice was displayed. Defaults to `nil`, for never.
         public init(isFirstLaunch: Bool, appVersion: Version, lastWhatsNewVersion: Version? = nil) {
             self.isFirstLaunch = isFirstLaunch
             self.appVersion = appVersion
@@ -32,6 +36,13 @@ public struct WhatsNew {
         userDefaults.isFirstLaunch = false
         update.saveAsLatest(userDefaults: userDefaults)
     }
+
+    /// Convenience to call `displayIfNeeded` and `register` in one go, e.g.
+    /// at the end of `AppDelegate.applicationDidFinishLaunching(_:)`.
+    public func displayIfNeededAndRegister(update: Update, userDefaults: UserDefaults = .standard) {
+        displayIfNeeded(update: update)
+        register(update: update, userDefaults: userDefaults)
+    }
 }
 
 
@@ -46,6 +57,16 @@ extension WhatsNew.Configuration {
         case whatsNewVersion = "WhatsNewVersion"
     }
 
+    public var standardMain: WhatsNew.Configuration {
+        return WhatsNew.Configuration(userDefaults: .standard, appBundle: .main)
+    }
+
+    /// Convenience initializer.
+    ///
+    /// - parameters:
+    ///     - userDefaults: Read `UserDefaults.isFirstLaunch` and `UserDefaults.whatsNewVersion` from here.
+    ///       See `WhatsNew.Configuration.UserDefaultsKey` for a list of keys used.
+    ///     - appBundle: Application bundle to read `CFBundleShortVersionString` from.
     /// - note: Defaults to versions 1.0.0 for `appVersion` if the respective value in `appBundle` is invalid or missing.
     public init(userDefaults: UserDefaults, appBundle: Bundle) {
         self.init(isFirstLaunch: userDefaults.isFirstLaunch,

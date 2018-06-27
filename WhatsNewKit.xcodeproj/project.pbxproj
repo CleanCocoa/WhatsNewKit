@@ -80,6 +80,7 @@
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
 		50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewWindowController.swift; sourceTree = "<group>"; };
 		50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
+		50A86F3D20E3B002004CBA4B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		5078A3D820E3631400C4A686 = {
 			isa = PBXGroup;
 			children = (
+				50A86F3D20E3B002004CBA4B /* README.md */,
 				5078A40E20E363B800C4A686 /* LICENSE.md */,
 				5078A3E420E3631400C4A686 /* WhatsNewKit */,
 				5078A3EF20E3631400C4A686 /* WhatsNewKitTests */,
