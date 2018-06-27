@@ -22,7 +22,18 @@ class UserDefaultsExtensionTests: XCTestCase {
         super.tearDown()
     }
 
+
+    // MARK: isFirstLaunch
+
     func testIsFirstLaunch_DefaultValue() {
+        XCTAssert(userDefaults.isFirstLaunch)
+    }
+
+    func testIsFirstLaunch_Setter() {
+        XCTAssert(userDefaults.isFirstLaunch)
+        userDefaults.isFirstLaunch = false
+        XCTAssertFalse(userDefaults.isFirstLaunch)
+        userDefaults.isFirstLaunch = true
         XCTAssert(userDefaults.isFirstLaunch)
     }
 
@@ -41,7 +52,20 @@ class UserDefaultsExtensionTests: XCTestCase {
         XCTAssert(userDefaults.isFirstLaunch)
     }
 
+
+    // MARK: whatsNewVersion
+
     func testWhatsNewVersion_DefaultValue() {
+        XCTAssertNil(userDefaults.whatsNewVersion)
+    }
+
+    func testWhatsNewVersion_Setter() {
+        XCTAssertNil(userDefaults.whatsNewVersion)
+        userDefaults.whatsNewVersion = Version(1,4,7)
+        XCTAssertEqual(userDefaults.whatsNewVersion, Version(1,4,7))
+        userDefaults.whatsNewVersion = Version(3,2,1)
+        XCTAssertEqual(userDefaults.whatsNewVersion, Version(3,2,1))
+        userDefaults.whatsNewVersion = nil
         XCTAssertNil(userDefaults.whatsNewVersion)
     }
 

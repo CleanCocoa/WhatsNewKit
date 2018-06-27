@@ -60,12 +60,22 @@ extension UserDefaults {
 
     /// - note: Defaults to `true` if `WhatsNew.Configuration.UserDefaultsKey.isFirstLaunchKey` is missing, `false` if it is set but not a bool.
     public var isFirstLaunch: Bool {
-        guard let isFirstLaunchValue = value(for: .isFirstLaunchKey) else { return true }
-        return isFirstLaunchValue as? Bool ?? false
+        get {
+            guard let isFirstLaunchValue = value(for: .isFirstLaunchKey) else { return true }
+            return isFirstLaunchValue as? Bool ?? false
+        }
+        set {
+            set(newValue, for: .isFirstLaunchKey)
+        }
     }
 
     public var whatsNewVersion: Version? {
-        guard let versionString = value(for: .whatsNewVersion) as? String else { return nil }
-        return Version(string: versionString)
+        get {
+            guard let versionString = value(for: .whatsNewVersion) as? String else { return nil }
+            return Version(string: versionString)
+        }
+        set {
+            set(newValue?.string, for: .whatsNewVersion)
+        }
     }
 }
