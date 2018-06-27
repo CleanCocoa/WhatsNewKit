@@ -4,9 +4,9 @@ public struct WhatsNew {
     public struct Configuration {
         public let isFirstLaunch: Bool
         public let appVersion: Version
-        public let lastWhatsNewVersion: Version
+        public let lastWhatsNewVersion: Version?
 
-        public init(isFirstLaunch: Bool, appVersion: Version, lastWhatsNewVersion: Version) {
+        public init(isFirstLaunch: Bool, appVersion: Version, lastWhatsNewVersion: Version? = nil) {
             self.isFirstLaunch = isFirstLaunch
             self.appVersion = appVersion
             self.lastWhatsNewVersion = lastWhatsNewVersion
@@ -26,11 +26,11 @@ extension WhatsNew.Configuration {
         case whatsNewVersion = "WhatsNewVersion"
     }
 
-    /// - note: Defaults to versions 1.0.0 for `appVersion` and `lastWhatsNewVersion` if the respective values in `userDefaults` or `appBundle` are invalid or missing.
+    /// - note: Defaults to versions 1.0.0 for `appVersion` if the respective value in `appBundle` is invalid or missing.
     public init(userDefaults: UserDefaults, appBundle: Bundle) {
         self.init(isFirstLaunch: userDefaults.isFirstLaunch,
                   appVersion: appBundle.appVersion ?? Version.initial,
-                  lastWhatsNewVersion: userDefaults.whatsNewVersion ?? Version.initial)
+                  lastWhatsNewVersion: userDefaults.whatsNewVersion)
     }
 }
 
