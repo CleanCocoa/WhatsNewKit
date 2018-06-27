@@ -20,4 +20,8 @@ public struct Update {
         }
         return true
     }
+
+    public func saveAsLatest(userDefaults: UserDefaults) {
+        userDefaults.whatsNewVersion = self.version
+    }
 }

@@ -3,12 +3,12 @@
 import XCTest
 import WhatsNewKit
 
-class UpdateTests: XCTestCase {
+private func update(version: Version) -> Update {
+    let irrelevantView: UpdateView = UpdateView()
+    return Update(version: version, windowTitle: "irrelevant", view: irrelevantView)
+}
 
-    private func update(version: Version) -> Update {
-        let irrelevantView: UpdateView = UpdateView()
-        return Update(version: version, windowTitle: "irrelevant", view: irrelevantView)
-    }
+class UpdateTests: XCTestCase {
 
     func testNeedsDisplay_SameAsAppVersion() {
 
@@ -99,5 +99,34 @@ class UpdateTests: XCTestCase {
             isFirstLaunch: true, appVersion: Version(2,0,0), lastWhatsNewVersion: Version(8,0,0))))
         XCTAssertFalse(v400.needsDisplay(configuration: .init(
             isFirstLaunch: false, appVersion: Version(2,0,0), lastWhatsNewVersion: Version(8,0,0))))
+    }
+}
+
+class UpdateIntegrationTests: XCTestCase {
+
+    var bundle: Bundle { return Bundle(for: UpdateIntegrationTests.self) }
+    var userDefaults: UserDefaults!
+
+    override func setUp() {
+        super.setUp()
+        userDefaults = UserDefaults.standard
+        userDefaults.removePersistentDomain(forName: bundle.bundleIdentifier!)
+    }
+
+    override func tearDown() {
+        userDefaults.removeObject(forKey: WhatsNew.Configuration.UserDefaultsKey.whatsNewVersion.rawValue)
+        userDefaults.removeObject(forKey: WhatsNew.Configuration.UserDefaultsKey.isFirstLaunchKey.rawValue)
+        userDefaults.removePersistentDomain(forName: bundle.bundleIdentifier!)
+        userDefaults = nil
+        super.tearDown()
+    }
+
+    func testSetAsLatest() {
+        // Precondition
+        XCTAssertNil(userDefaults.whatsNewVersion)
+
+        update(version: Version(2,3,4)).saveAsLatest(userDefaults: userDefaults)
+
+        XCTAssertEqual(userDefaults.whatsNewVersion, Version(2,3,4))
     }
 }
