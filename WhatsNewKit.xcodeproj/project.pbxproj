@@ -14,6 +14,9 @@
 		5078A40820E3636000C4A686 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5078A40620E3636000C4A686 /* MainMenu.xib */; };
 		5078A40F20E3641800C4A686 /* WhatsNewKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; };
 		5078A41020E3641800C4A686 /* WhatsNewKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5078A41520E364F400C4A686 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41420E364F400C4A686 /* Version.swift */; };
+		5078A41720E3652B00C4A686 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41620E3652B00C4A686 /* VersionTests.swift */; };
+		5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		5078A40920E3636000C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5078A40A20E3636000C4A686 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		5078A40E20E363B800C4A686 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		5078A41420E364F400C4A686 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		5078A41620E3652B00C4A686 /* VersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
+		5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				5078A3E520E3631400C4A686 /* WhatsNewKit.h */,
+				5078A41420E364F400C4A686 /* Version.swift */,
+				5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */,
 				5078A3E620E3631400C4A686 /* Info.plist */,
 			);
 			path = WhatsNewKit;
@@ -123,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5078A3F220E3631400C4A686 /* Info.plist */,
+				5078A41620E3652B00C4A686 /* VersionTests.swift */,
 			);
 			path = WhatsNewKitTests;
 			sourceTree = "<group>";
@@ -220,9 +229,11 @@
 				TargetAttributes = {
 					5078A3E120E3631400C4A686 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					5078A3EA20E3631400C4A686 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					5078A3FF20E3635E00C4A686 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -280,6 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */,
+				5078A41520E364F400C4A686 /* Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5078A41720E3652B00C4A686 /* VersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +461,7 @@
 		5078A3F720E3631400C4A686 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -466,6 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.WhatsNewKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -473,6 +489,7 @@
 		5078A3F820E3631400C4A686 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -499,6 +516,8 @@
 		5078A3FA20E3631400C4A686 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WhatsNewKitTests/Info.plist;
@@ -509,6 +528,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.WhatsNewKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -516,6 +536,8 @@
 		5078A3FB20E3631400C4A686 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WhatsNewKitTests/Info.plist;
@@ -533,6 +555,7 @@
 		5078A40C20E3636000C4A686 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +574,7 @@
 		5078A40D20E3636000C4A686 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
