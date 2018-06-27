@@ -12,6 +12,21 @@ public struct WhatsNew {
             self.lastWhatsNewVersion = lastWhatsNewVersion
         }
     }
+
+    public let configuration: Configuration
+
+    public init(configuration: Configuration) {
+        self.configuration = configuration
+    }
+
+    public func displayIfNeeded(update: Update) {
+        guard update.needsDisplay(configuration: configuration) else { return }
+        display(update: update)
+    }
+
+    public func display(update: Update) {
+        WhatsNewWindowController.shared.show(update: update)
+    }
 }
 
 

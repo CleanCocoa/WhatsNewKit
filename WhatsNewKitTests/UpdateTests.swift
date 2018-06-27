@@ -7,7 +7,7 @@ class UpdateTests: XCTestCase {
 
     private func update(version: Version) -> Update {
         let irrelevantView: UpdateView = UpdateView()
-        return Update(version: version, view: irrelevantView)
+        return Update(version: version, windowTitle: "irrelevant", view: irrelevantView)
     }
 
     func testNeedsDisplay_SameAsAppVersion() {

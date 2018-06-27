@@ -22,6 +22,7 @@
 		50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2820E36E60004CBA4B /* WhatsNew.swift */; };
 		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 		50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3020E3796C004CBA4B /* UpdateTests.swift */; };
+		50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		50A86F2820E36E60004CBA4B /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
 		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
+		50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		50A86F3220E380B5004CBA4B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */,
 				5078A41E20E3683100C4A686 /* UpdateView.swift */,
 			);
 			path = UI;
@@ -324,6 +327,7 @@
 			files = (
 				5078A41B20E3662700C4A686 /* Update.swift in Sources */,
 				5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */,
+				50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */,
 				5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */,
 				5078A41520E364F400C4A686 /* Version.swift in Sources */,
 				50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */,

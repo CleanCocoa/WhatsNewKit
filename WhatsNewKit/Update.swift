@@ -2,10 +2,12 @@
 
 public struct Update {
     public let version: Version
+    public let windowTitle: String?
     public let view: UpdateView
 
-    public init(version: Version, view: UpdateView) {
+    public init(version: Version, windowTitle: String? = nil, view: UpdateView) {
         self.version = version
+        self.windowTitle = windowTitle
         self.view = view
     }
 
