@@ -17,6 +17,8 @@
 		5078A41520E364F400C4A686 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41420E364F400C4A686 /* Version.swift */; };
 		5078A41720E3652B00C4A686 /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41620E3652B00C4A686 /* VersionTests.swift */; };
 		5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */; };
+		50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2820E36E60004CBA4B /* WhatsNew.swift */; };
+		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		5078A41420E364F400C4A686 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		5078A41620E3652B00C4A686 /* VersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
 		5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
+		50A86F2820E36E60004CBA4B /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
+		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5078A3E520E3631400C4A686 /* WhatsNewKit.h */,
+				50A86F2820E36E60004CBA4B /* WhatsNew.swift */,
 				5078A41420E364F400C4A686 /* Version.swift */,
 				50A86F2720E36E31004CBA4B /* Util */,
 				5078A3E620E3631400C4A686 /* Info.plist */,
@@ -132,6 +137,7 @@
 			children = (
 				5078A3F220E3631400C4A686 /* Info.plist */,
 				5078A41620E3652B00C4A686 /* VersionTests.swift */,
+				50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */,
 			);
 			path = WhatsNewKitTests;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 			files = (
 				5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */,
 				5078A41520E364F400C4A686 /* Version.swift in Sources */,
+				50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */,
 				5078A41720E3652B00C4A686 /* VersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

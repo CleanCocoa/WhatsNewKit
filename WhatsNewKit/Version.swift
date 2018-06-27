@@ -1,6 +1,9 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
 public struct Version: Equatable, Comparable {
+    /// The initial version number of any publicized app: `1.0.0`.
+    public static var initial: Version { return Version(1, 0, 0) }
+
     public let major: Int
     public let minor: Int
     public let patch: Int
@@ -13,6 +16,23 @@ public struct Version: Equatable, Comparable {
         self.major = major
         self.minor = minor
         self.patch = patch
+    }
+
+    public static func ==(lhs: Version, rhs: Version) -> Bool {
+        return lhs.major == rhs.major
+            && lhs.minor == rhs.minor
+            && lhs.patch == rhs.patch
+    }
+
+    public static func <(lhs: Version, rhs: Version) -> Bool {
+        if lhs.major < rhs.major { return true }
+        if lhs.major == rhs.major {
+            if lhs.minor < rhs.minor { return true }
+            if lhs.minor == rhs.minor {
+                return lhs.patch < rhs.patch
+            }
+        }
+        return false
     }
 }
 
@@ -30,6 +50,9 @@ extension Version {
     }
 }
 
+
+// MARK: - Convenience NSBundle Initializers
+
 import class Foundation.Bundle
 
 extension Version {
@@ -40,21 +63,8 @@ extension Version {
     }
 }
 
-public func ==(lhs: Version, rhs: Version) -> Bool {
-
-    return lhs.major == rhs.major
-        && lhs.minor == rhs.minor
-        && lhs.patch == rhs.patch
-}
-
-public func <(lhs: Version, rhs: Version) -> Bool {
-
-    if lhs.major < rhs.major { return true }
-    if lhs.major == rhs.major {
-        if lhs.minor < rhs.minor { return true }
-        if lhs.minor == rhs.minor {
-            return lhs.patch < rhs.patch
-        }
+extension Bundle {
+    public var appVersion: Version? {
+        return Version(bundle: self)
     }
-    return false
 }
