@@ -1,6 +1,6 @@
 # WhatsNewKit
 
-![Swift 4](https://img.shields.io/badge/Swift-4.1-blue.svg?style=flat)
+![Swift 4.2](https://img.shields.io/badge/Swift-4.2-blue.svg?style=flat)
 ![Version](https://img.shields.io/github/tag/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![License](https://img.shields.io/github/license/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
