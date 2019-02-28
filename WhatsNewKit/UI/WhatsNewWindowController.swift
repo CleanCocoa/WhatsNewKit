@@ -22,7 +22,7 @@ class WhatsNewWindowController: NSWindowController {
         window.isMovableByWindowBackground = true
         window.collectionBehavior = .canJoinAllSpaces
         window.level = .modalPanel
-        window.backgroundColor = .white
+        window.backgroundColor = .textBackgroundColor
 
         self.init(window: window)
 
