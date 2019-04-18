@@ -1,6 +1,6 @@
 # WhatsNewKit
 
-![Swift 4.2](https://img.shields.io/badge/Swift-4.2-blue.svg?style=flat)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
 ![Version](https://img.shields.io/github/tag/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![License](https://img.shields.io/github/license/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
@@ -62,4 +62,4 @@ Use `WhatsNew.displayIfNeeded(update:)` to let WhatsNewKit figure out if the use
 
 ## License
 
-Copyright (c) 2018 Christian Tietze. Distributed under the MIT License.
+Copyright (c) 2019 Christian Tietze. Distributed under the MIT License.
