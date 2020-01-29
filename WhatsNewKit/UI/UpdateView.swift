@@ -2,6 +2,10 @@
 
 import AppKit
 
+public protocol UpdateViewContainer {
+    var updateView: UpdateView { get }
+}
+
 /// - note: You can use the `dismissWhatsNew(_:)` action to implement a custom close button.
 open class UpdateView: NSView {
     @IBAction open func dismissWhatsNew(_ sender: Any?) {

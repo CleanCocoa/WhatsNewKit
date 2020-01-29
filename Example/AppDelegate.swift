@@ -3,15 +3,18 @@
 import Cocoa
 import WhatsNewKit
 
+// Note: The sample app's version is set to `2.3.4`.
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet var appWindowController: AppWindowController!
-    @IBOutlet weak var updateView: UpdateView!
+
+    lazy var whatsNewViewController = UpdateViewController(version: Version(2, 2, 0))
 
     // `Update.version <= app version` indicates the information is displayable
     // in the current release.
-    lazy var v220: Update = Update(version: Version(2, 2, 0), view: self.updateView)
+    lazy var v220: Update = Update(version: Version(2, 2, 0), viewContainer: self.whatsNewViewController)
 
     lazy var whatsNew: WhatsNew = {
         // Use this in production code:

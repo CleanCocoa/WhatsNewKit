@@ -26,3 +26,11 @@ public struct Update {
         userDefaults.whatsNewVersion = self.version
     }
 }
+
+extension Update {
+    public init(version: Version, windowTitle: String? = nil, viewContainer: UpdateViewContainer) {
+        self.init(version: version,
+                  windowTitle: windowTitle,
+                  view: viewContainer.updateView)
+    }
+}
