@@ -29,7 +29,17 @@ public struct WhatsNew {
     }
 
     public func display(update: Update) {
-        WhatsNewWindowController.shared.show(update: update)
+        display(updates: [update])
+    }
+
+    public func displayIfNeeded(updates: [Update]) {
+        let notOutdatedUpdates = updates.filter { $0.needsDisplay(configuration: configuration) }
+        display(updates: notOutdatedUpdates)
+    }
+
+    public func display(updates: [Update]) {
+        guard updates.isEmpty == false else { return }
+        WhatsNewWindowController.shared.show(update: updates[0])
     }
 
     public func register(update: Update, userDefaults: UserDefaults = .standard) {

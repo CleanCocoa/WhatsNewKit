@@ -11,7 +11,7 @@ class AppWindowController: NSWindowController {
     @IBOutlet weak var isFirstLaunchLabel: NSTextField!
 
     var whatsNew: WhatsNew!
-    var update: Update!
+    var updates: [Update]!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,15 +26,16 @@ class AppWindowController: NSWindowController {
     }
 
     @IBAction func forceShowWhatsNew(_ sender: Any) {
-        whatsNew.display(update: update)
+        whatsNew.display(updates: updates)
     }
 
     @IBAction func displayWhatsNewIfNeeded(_ sender: Any) {
-        whatsNew.displayIfNeeded(update: update)
+        whatsNew.displayIfNeeded(updates: updates)
     }
 
     @IBAction func saveUpdate(_ sender: Any) {
-        update.saveAsLatest(userDefaults: UserDefaults.standard)
+        guard let latest = updates.sorted(by: { $0.version < $1.version }).first else { return }
+        latest.saveAsLatest(userDefaults: UserDefaults.standard)
         updateLabels()
     }
 

@@ -10,17 +10,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet var appWindowController: AppWindowController!
 
-    lazy var whatsNewViewController = UpdateViewController(version: Version(2, 2, 0))
-
     // `Update.version <= app version` indicates the information is displayable
     // in the current release.
-    lazy var v220: Update = Update(version: Version(2, 2, 0), viewContainer: self.whatsNewViewController)
+    let updateVersions = [
+        Version(1, 8, 0),
+        Version(2, 2, 0)
+    ]
+
+    // Load all the `UpdateView`s from their Nibs
+    lazy var updates = updateVersions.map { version in
+        Update(version: version, viewContainer: UpdateViewController(version: version))
+    }
 
     lazy var whatsNew: WhatsNew = {
-        // Use this in production code:
+        // Use this in production code for your convenience:
         //     let configuration = WhatsNew.Configuration(userDefaults: UserDefaults.standard, appBundle: Bundle.main)
 
-        // Use this for testing:
+        // Use this for testing, replacing the app bundle's version with a constant:
         //     let configuration = WhatsNew.Configuration(
         //        isFirstLaunch: false,
         //        appVersion: Version(2,0,0),
@@ -33,13 +39,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         appWindowController.whatsNew = whatsNew
-        appWindowController.update = v220
+        appWindowController.updates = updates
 
         // Show upon launch, if needed
-        whatsNew.displayIfNeeded(update: v220)
+        whatsNew.displayIfNeeded(updates: updates)
 
         // Store as known version
-        whatsNew.register(update: v220, userDefaults: UserDefaults.standard)
+        whatsNew.register(update: updates.last!, userDefaults: UserDefaults.standard)
     }
 
 }

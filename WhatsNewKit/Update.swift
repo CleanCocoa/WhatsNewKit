@@ -23,7 +23,13 @@ public struct Update {
     }
 
     public func saveAsLatest(userDefaults: UserDefaults = .standard) {
-        userDefaults.whatsNewVersion = self.version
+        self.version.saveAsLatest(userDefaults: userDefaults)
+    }
+}
+
+extension Version {
+    public func saveAsLatest(userDefaults: UserDefaults = .standard) {
+        userDefaults.whatsNewVersion = self
     }
 }
 

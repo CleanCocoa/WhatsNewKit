@@ -1,6 +1,6 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public struct Version: Equatable, Comparable {
+public struct Version: Equatable, Comparable, Hashable {
     /// The initial version number of any publicized app: `1.0.0`.
     public static var initial: Version { return Version(1, 0, 0) }
 
