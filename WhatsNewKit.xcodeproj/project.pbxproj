@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5038BB9623E1B06300488536 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5038BB9523E1B06300488536 /* UpdateViewController.swift */; };
 		5038BB9823E1B1DE00488536 /* WhatsNew_v2_2_0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5038BB9723E1B1DE00488536 /* WhatsNew_v2_2_0.xib */; };
+		5038BB9A23E1B29A00488536 /* WhatsNew_v1_8_0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5038BB9923E1B29A00488536 /* WhatsNew_v1_8_0.xib */; };
 		5078A3EC20E3631400C4A686 /* WhatsNewKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5078A3E220E3631400C4A686 /* WhatsNewKit.framework */; };
 		5078A3F320E3631400C4A686 /* WhatsNewKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5078A3E520E3631400C4A686 /* WhatsNewKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5078A40320E3635E00C4A686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A40220E3635E00C4A686 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		5038BB9523E1B06300488536 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		5038BB9723E1B1DE00488536 /* WhatsNew_v2_2_0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNew_v2_2_0.xib; sourceTree = "<group>"; };
+		5038BB9923E1B29A00488536 /* WhatsNew_v1_8_0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNew_v1_8_0.xib; sourceTree = "<group>"; };
 		5078A3E220E3631400C4A686 /* WhatsNewKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhatsNewKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5078A3E520E3631400C4A686 /* WhatsNewKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhatsNewKit.h; sourceTree = "<group>"; };
 		5078A3E620E3631400C4A686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				5078A40420E3636000C4A686 /* Assets.xcassets */,
 				5078A40620E3636000C4A686 /* MainMenu.xib */,
 				5038BB9723E1B1DE00488536 /* WhatsNew_v2_2_0.xib */,
+				5038BB9923E1B29A00488536 /* WhatsNew_v1_8_0.xib */,
 				5078A40920E3636000C4A686 /* Info.plist */,
 				5078A40A20E3636000C4A686 /* Example.entitlements */,
 			);
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5078A40520E3636000C4A686 /* Assets.xcassets in Resources */,
+				5038BB9A23E1B29A00488536 /* WhatsNew_v1_8_0.xib in Resources */,
 				5078A40820E3636000C4A686 /* MainMenu.xib in Resources */,
 				5038BB9823E1B1DE00488536 /* WhatsNew_v2_2_0.xib in Resources */,
 			);

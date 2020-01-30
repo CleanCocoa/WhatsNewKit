@@ -18,8 +18,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="POz-sX-Rtf">
-                    <rect key="frame" x="79" y="196" width="316" height="28"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What's New in Example App" id="avy-K2-vXo">
+                    <rect key="frame" x="40" y="196" width="394" height="28"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What's New in Example App v2.2.0" id="avy-K2-vXo">
                         <font key="font" metaFont="systemBold" size="24"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

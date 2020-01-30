@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UpdateViewController" customModule="WhatsNewKit">
+            <connections>
+                <outlet property="view" destination="gKT-zZ-sP4" id="AX6-YN-dEX"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="gKT-zZ-sP4" customClass="UpdateView" customModule="WhatsNewKit">
+            <rect key="frame" x="0.0" y="0.0" width="560" height="290"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zV7-0r-XFk">
+                    <rect key="frame" x="99" y="222" width="362" height="28"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What Was New in v1.8.0, Again?" id="5GW-I6-Uov">
+                        <font key="font" metaFont="systemBold" size="24"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="n00-o3-CZh">
+                    <rect key="frame" x="459" y="13" width="87" height="32"/>
+                    <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rlK-wO-V0t">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismissWhatsNew:" target="gKT-zZ-sP4" id="bLa-yT-dfy"/>
+                    </connections>
+                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oya-7a-EiP">
+                    <rect key="frame" x="122" y="0.0" width="316" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="N1o-pk-vYV"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topRight" image="screenshot" id="rOZ-uM-yLC"/>
+                </imageView>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Qr1-SK-xwD">
+                    <rect key="frame" x="28" y="140" width="504" height="48"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="dqV-xn-N8f">
+                        <font key="font" metaFont="system"/>
+                        <string key="title">This version introduced a cool feature back in the day. Users who did not update since v1.7.x and now get v2.3.4 of the app will see this, too, because it happened in the meantime.</string>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Oya-7a-EiP" firstAttribute="centerX" secondItem="gKT-zZ-sP4" secondAttribute="centerX" id="11d-B0-Njq"/>
+                <constraint firstItem="zV7-0r-XFk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gKT-zZ-sP4" secondAttribute="leading" constant="40" id="MuK-o8-jei"/>
+                <constraint firstItem="n00-o3-CZh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Oya-7a-EiP" secondAttribute="trailing" constant="20" id="OTu-Re-88S"/>
+                <constraint firstItem="Oya-7a-EiP" firstAttribute="top" secondItem="Qr1-SK-xwD" secondAttribute="bottom" constant="20" id="OtC-G8-ZRA"/>
+                <constraint firstAttribute="trailing" secondItem="Qr1-SK-xwD" secondAttribute="trailing" constant="30" id="WNq-Tm-pXz"/>
+                <constraint firstItem="Qr1-SK-xwD" firstAttribute="leading" secondItem="gKT-zZ-sP4" secondAttribute="leading" constant="30" id="btg-w6-vaT"/>
+                <constraint firstAttribute="trailing" secondItem="n00-o3-CZh" secondAttribute="trailing" constant="20" id="cK5-hN-X1x"/>
+                <constraint firstAttribute="bottom" secondItem="n00-o3-CZh" secondAttribute="bottom" constant="20" id="enG-xR-lUs"/>
+                <constraint firstItem="Qr1-SK-xwD" firstAttribute="top" secondItem="zV7-0r-XFk" secondAttribute="bottom" constant="34" id="fHj-vH-jLm"/>
+                <constraint firstItem="n00-o3-CZh" firstAttribute="leading" secondItem="Oya-7a-EiP" secondAttribute="trailing" constant="27" id="k4n-4c-VHd"/>
+                <constraint firstItem="zV7-0r-XFk" firstAttribute="top" secondItem="gKT-zZ-sP4" secondAttribute="top" constant="40" id="n4c-dv-1VS"/>
+                <constraint firstAttribute="bottom" secondItem="Oya-7a-EiP" secondAttribute="bottom" id="qD1-0U-yFt"/>
+                <constraint firstItem="zV7-0r-XFk" firstAttribute="centerX" secondItem="gKT-zZ-sP4" secondAttribute="centerX" id="zeJ-CQ-gh8"/>
+            </constraints>
+            <point key="canvasLocation" x="-351.5" y="150"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="screenshot" width="316" height="404"/>
+    </resources>
+</document>
