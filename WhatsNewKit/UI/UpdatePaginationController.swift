@@ -35,4 +35,12 @@ internal class UpdatePaginationController {
     func show(updates: [Update]) {
         self.updates = updates
     }
+
+    func showPrevious() {
+        self.selectedIndex -= 1
+    }
+
+    func showNext() {
+        self.selectedIndex += 1
+    }
 }
