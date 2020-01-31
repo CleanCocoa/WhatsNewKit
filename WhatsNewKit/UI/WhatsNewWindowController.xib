@@ -8,9 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WhatsNewWindowController" customModule="WhatsNewKit" customModuleProvider="target">
             <connections>
-                <outlet property="nextButton" destination="Tta-Uc-NOb" id="cG9-2c-Myz"/>
-                <outlet property="previousButton" destination="C63-oZ-KVq" id="RYk-kH-cuy"/>
-                <outlet property="updateContainerView" destination="9Wk-9I-M4o" id="dYR-zF-lbY"/>
+                <outlet property="updateContainerViewController" destination="gcb-5w-s1z" id="kQ7-FH-Cm9"/>
+                <outlet property="updatePaginationViewController" destination="f47-Af-ZNO" id="go8-99-O6f"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Lny-Q4-yec"/>
             </connections>
         </customObject>
@@ -23,7 +22,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="886" height="499"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="750" verticalStackHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeS-AV-pfj">
                         <rect key="frame" x="0.0" y="0.0" width="886" height="499"/>
@@ -38,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="68" width="886" height="5"/>
                                     </box>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="750" verticalStackHuggingPriority="750" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVp-8t-vcm" userLabel="Navigation Button Stack">
-                                        <rect key="frame" x="409" y="20" width="68" height="30"/>
+                                        <rect key="frame" x="390" y="20" width="106" height="30"/>
                                         <subviews>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="C63-oZ-KVq">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -51,17 +50,34 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="showPreviousUpdate:" target="-2" id="reO-oO-Ehs"/>
+                                                    <action selector="showPreviousUpdate:" target="f47-Af-ZNO" id="bRc-wz-fLT"/>
+                                                    <outlet property="nextKeyView" destination="4vm-fj-d4e" id="7O9-b6-toM"/>
+                                                </connections>
+                                            </button>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="4vm-fj-d4e">
+                                                <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="NhO-cC-gl6"/>
+                                                    <constraint firstAttribute="height" constant="30" id="oKS-b4-1Ec"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7Li-OF-bGm">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="close:" target="f47-Af-ZNO" id="ndR-rp-HC5"/>
+                                                    <outlet property="nextKeyView" destination="Tta-Uc-NOb" id="m6c-X8-5ee"/>
                                                 </connections>
                                             </button>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="Tta-Uc-NOb">
-                                                <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="76" y="0.0" width="30" height="30"/>
                                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRightFacingTriangleTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="iAg-f0-o5N">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="showNextUpdate:" target="-2" id="kDn-uy-63e"/>
+                                                    <action selector="showNextUpdate:" target="f47-Af-ZNO" id="SD0-dF-DsB"/>
+                                                    <outlet property="nextKeyView" destination="C63-oZ-KVq" id="PYI-dZ-IaP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -72,8 +88,10 @@
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -108,11 +126,28 @@
                     <constraint firstItem="WeS-AV-pfj" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="xeG-6z-qHS"/>
                 </constraints>
             </view>
+            <connections>
+                <outlet property="initialFirstResponder" destination="Tta-Uc-NOb" id="Usk-7W-aWf"/>
+            </connections>
             <point key="canvasLocation" x="-70" y="255.5"/>
         </window>
+        <viewController id="f47-Af-ZNO" customClass="UpdatePaginationViewController" customModule="WhatsNewKit" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="4vm-fj-d4e" id="7fy-nA-7w3"/>
+                <outlet property="nextButton" destination="Tta-Uc-NOb" id="lmF-fa-vmK"/>
+                <outlet property="previousButton" destination="C63-oZ-KVq" id="JMp-8f-sdi"/>
+                <outlet property="view" destination="1tK-uT-e1b" id="v2h-d1-3GP"/>
+            </connections>
+        </viewController>
+        <viewController id="gcb-5w-s1z" customClass="UpdateContainerViewController" customModule="WhatsNewKit" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="9Wk-9I-M4o" id="fdv-Ky-FdK"/>
+            </connections>
+        </viewController>
     </objects>
     <resources>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSStopProgressTemplate" width="11" height="11"/>
     </resources>
 </document>

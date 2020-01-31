@@ -22,7 +22,7 @@
 		5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */; };
 		5078A41B20E3662700C4A686 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41A20E3662700C4A686 /* Update.swift */; };
 		5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41E20E3683100C4A686 /* UpdateView.swift */; };
-		508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */; };
+		508A78DA23E41F4C00B5DD89 /* UpdatePaginationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78D923E41F4C00B5DD89 /* UpdatePaginationViewController.swift */; };
 		508A78DC23E42F7000B5DD89 /* WhatsNewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508A78DB23E42F7000B5DD89 /* WhatsNewWindowController.xib */; };
 		508A78DE23E48ECE00B5DD89 /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78DD23E48ECE00B5DD89 /* NotificationToken.swift */; };
 		508A78E123E490D600B5DD89 /* PaginationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E023E490D600B5DD89 /* PaginationPresenter.swift */; };
@@ -32,7 +32,9 @@
 		508A78EA23E4925E00B5DD89 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E923E4925E00B5DD89 /* Event.swift */; };
 		508A78EC23E4954100B5DD89 /* UpdatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78EB23E4954100B5DD89 /* UpdatePresenter.swift */; };
 		508A78EE23E4957400B5DD89 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78ED23E4957400B5DD89 /* Presenter.swift */; };
+		508A78F023E496E700B5DD89 /* UpdateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78EF23E496E700B5DD89 /* UpdateContainerViewController.swift */; };
 		508A78F223E4981100B5DD89 /* WindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78F123E4981100B5DD89 /* WindowPresenter.swift */; };
+		508A78F423E499D700B5DD89 /* Wiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78F323E499D700B5DD89 /* Wiring.swift */; };
 		50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2820E36E60004CBA4B /* WhatsNew.swift */; };
 		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 		50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3020E3796C004CBA4B /* UpdateTests.swift */; };
@@ -98,7 +100,7 @@
 		5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 		5078A41A20E3662700C4A686 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		5078A41E20E3683100C4A686 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
-		508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePaginationController.swift; sourceTree = "<group>"; };
+		508A78D923E41F4C00B5DD89 /* UpdatePaginationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePaginationViewController.swift; sourceTree = "<group>"; };
 		508A78DB23E42F7000B5DD89 /* WhatsNewWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewWindowController.xib; sourceTree = "<group>"; };
 		508A78DD23E48ECE00B5DD89 /* NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
 		508A78E023E490D600B5DD89 /* PaginationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationPresenter.swift; sourceTree = "<group>"; };
@@ -108,7 +110,9 @@
 		508A78E923E4925E00B5DD89 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		508A78EB23E4954100B5DD89 /* UpdatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePresenter.swift; sourceTree = "<group>"; };
 		508A78ED23E4957400B5DD89 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		508A78EF23E496E700B5DD89 /* UpdateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContainerViewController.swift; sourceTree = "<group>"; };
 		508A78F123E4981100B5DD89 /* WindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPresenter.swift; sourceTree = "<group>"; };
+		508A78F323E499D700B5DD89 /* Wiring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiring.swift; sourceTree = "<group>"; };
 		50A86F2820E36E60004CBA4B /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
 		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				5078A3E520E3631400C4A686 /* WhatsNewKit.h */,
 				50A86F2820E36E60004CBA4B /* WhatsNew.swift */,
+				508A78F323E499D700B5DD89 /* Wiring.swift */,
 				5078A41420E364F400C4A686 /* Version.swift */,
 				5078A41A20E3662700C4A686 /* Update.swift */,
 				508A78E223E4914600B5DD89 /* State */,
@@ -251,9 +256,10 @@
 		50A86F3220E380B5004CBA4B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */,
 				508A78DB23E42F7000B5DD89 /* WhatsNewWindowController.xib */,
-				508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */,
+				50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */,
+				508A78EF23E496E700B5DD89 /* UpdateContainerViewController.swift */,
+				508A78D923E41F4C00B5DD89 /* UpdatePaginationViewController.swift */,
 				5078A41E20E3683100C4A686 /* UpdateView.swift */,
 				5038BB9523E1B06300488536 /* UpdateViewController.swift */,
 			);
@@ -422,9 +428,10 @@
 				508A78E123E490D600B5DD89 /* PaginationPresenter.swift in Sources */,
 				508A78EE23E4957400B5DD89 /* Presenter.swift in Sources */,
 				5078A41B20E3662700C4A686 /* Update.swift in Sources */,
-				508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */,
 				508A78F223E4981100B5DD89 /* WindowPresenter.swift in Sources */,
 				508A78E423E4914F00B5DD89 /* StoreSubscriber.swift in Sources */,
+				508A78F023E496E700B5DD89 /* UpdateContainerViewController.swift in Sources */,
+				508A78DA23E41F4C00B5DD89 /* UpdatePaginationViewController.swift in Sources */,
 				50D1A6C823E4A68000EF5FBA /* Collection+isNotEmpty.swift in Sources */,
 				5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */,
 				508A78DE23E48ECE00B5DD89 /* NotificationToken.swift in Sources */,
@@ -435,6 +442,7 @@
 				5038BB9623E1B06300488536 /* UpdateViewController.swift in Sources */,
 				50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */,
 				508A78EA23E4925E00B5DD89 /* Event.swift in Sources */,
+				508A78F423E499D700B5DD89 /* Wiring.swift in Sources */,
 				508A78E623E4919A00B5DD89 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

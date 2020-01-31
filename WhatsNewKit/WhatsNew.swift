@@ -1,6 +1,6 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public struct WhatsNew {
+public final class WhatsNew {
     public struct Configuration {
         public let isFirstLaunch: Bool
         public let appVersion: Version
@@ -36,6 +36,8 @@ public struct WhatsNew {
         let notOutdatedUpdates = updates.filter { $0.needsDisplay(configuration: configuration) }
         display(updates: notOutdatedUpdates)
     }
+
+    private var wiring: Wiring?
 
     public func display(updates: [Update]) {
         guard updates.isNotEmpty else { return }
