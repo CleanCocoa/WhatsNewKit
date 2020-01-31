@@ -24,11 +24,21 @@
 		5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41E20E3683100C4A686 /* UpdateView.swift */; };
 		508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */; };
 		508A78DC23E42F7000B5DD89 /* WhatsNewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508A78DB23E42F7000B5DD89 /* WhatsNewWindowController.xib */; };
+		508A78DE23E48ECE00B5DD89 /* NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78DD23E48ECE00B5DD89 /* NotificationToken.swift */; };
+		508A78E423E4914F00B5DD89 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E323E4914F00B5DD89 /* StoreSubscriber.swift */; };
+		508A78E623E4919A00B5DD89 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E523E4919A00B5DD89 /* State.swift */; };
+		508A78E823E4924800B5DD89 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E723E4924800B5DD89 /* Store.swift */; };
+		508A78EA23E4925E00B5DD89 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78E923E4925E00B5DD89 /* Event.swift */; };
 		50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2820E36E60004CBA4B /* WhatsNew.swift */; };
 		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 		50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3020E3796C004CBA4B /* UpdateTests.swift */; };
 		50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */; };
 		50A86F3C20E3A2DD004CBA4B /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */; };
+		50D1A6BD23E49F0100EF5FBA /* ReplaceUpdatesReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A6BC23E49F0100EF5FBA /* ReplaceUpdatesReducerTests.swift */; };
+		50D1A6BF23E4A3B500EF5FBA /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A6BE23E4A3B500EF5FBA /* TestHelpers.swift */; };
+		50D1A6C123E4A3D800EF5FBA /* ShowNextReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A6C023E4A3D800EF5FBA /* ShowNextReducerTests.swift */; };
+		50D1A6C323E4A3F800EF5FBA /* ShowPreviousReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A6C223E4A3F800EF5FBA /* ShowPreviousReducerTests.swift */; };
+		50D1A6C623E4A42B00EF5FBA /* StoreSubscriberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D1A6C523E4A42B00EF5FBA /* StoreSubscriberTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,12 +95,22 @@
 		5078A41E20E3683100C4A686 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePaginationController.swift; sourceTree = "<group>"; };
 		508A78DB23E42F7000B5DD89 /* WhatsNewWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhatsNewWindowController.xib; sourceTree = "<group>"; };
+		508A78DD23E48ECE00B5DD89 /* NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
+		508A78E323E4914F00B5DD89 /* StoreSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubscriber.swift; sourceTree = "<group>"; };
+		508A78E523E4919A00B5DD89 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		508A78E723E4924800B5DD89 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		508A78E923E4925E00B5DD89 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		50A86F2820E36E60004CBA4B /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
 		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
 		50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewWindowController.swift; sourceTree = "<group>"; };
 		50A86F3B20E3A2DD004CBA4B /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		50A86F3D20E3B002004CBA4B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50D1A6BC23E49F0100EF5FBA /* ReplaceUpdatesReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceUpdatesReducerTests.swift; sourceTree = "<group>"; };
+		50D1A6BE23E4A3B500EF5FBA /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		50D1A6C023E4A3D800EF5FBA /* ShowNextReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNextReducerTests.swift; sourceTree = "<group>"; };
+		50D1A6C223E4A3F800EF5FBA /* ShowPreviousReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPreviousReducerTests.swift; sourceTree = "<group>"; };
+		50D1A6C523E4A42B00EF5FBA /* StoreSubscriberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubscriberTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +169,7 @@
 				50A86F2820E36E60004CBA4B /* WhatsNew.swift */,
 				5078A41420E364F400C4A686 /* Version.swift */,
 				5078A41A20E3662700C4A686 /* Update.swift */,
+				508A78E223E4914600B5DD89 /* State */,
 				50A86F3220E380B5004CBA4B /* UI */,
 				50A86F2720E36E31004CBA4B /* Util */,
 				5078A3E620E3631400C4A686 /* Info.plist */,
@@ -160,9 +181,11 @@
 			isa = PBXGroup;
 			children = (
 				5078A3F220E3631400C4A686 /* Info.plist */,
-				5078A41620E3652B00C4A686 /* VersionTests.swift */,
+				50D1A6BE23E4A3B500EF5FBA /* TestHelpers.swift */,
 				50A86F3020E3796C004CBA4B /* UpdateTests.swift */,
 				50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */,
+				5078A41620E3652B00C4A686 /* VersionTests.swift */,
+				50D1A6C423E4A40A00EF5FBA /* State */,
 			);
 			path = WhatsNewKitTests;
 			sourceTree = "<group>";
@@ -182,10 +205,22 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		508A78E223E4914600B5DD89 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				508A78E323E4914F00B5DD89 /* StoreSubscriber.swift */,
+				508A78E523E4919A00B5DD89 /* State.swift */,
+				508A78E723E4924800B5DD89 /* Store.swift */,
+				508A78E923E4925E00B5DD89 /* Event.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		50A86F2720E36E31004CBA4B /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */,
+				508A78DD23E48ECE00B5DD89 /* NotificationToken.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -200,6 +235,17 @@
 				5038BB9523E1B06300488536 /* UpdateViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		50D1A6C423E4A40A00EF5FBA /* State */ = {
+			isa = PBXGroup;
+			children = (
+				50D1A6BC23E49F0100EF5FBA /* ReplaceUpdatesReducerTests.swift */,
+				50D1A6C023E4A3D800EF5FBA /* ShowNextReducerTests.swift */,
+				50D1A6C223E4A3F800EF5FBA /* ShowPreviousReducerTests.swift */,
+				50D1A6C523E4A42B00EF5FBA /* StoreSubscriberTests.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +397,17 @@
 			files = (
 				5078A41B20E3662700C4A686 /* Update.swift in Sources */,
 				508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */,
+				508A78E423E4914F00B5DD89 /* StoreSubscriber.swift in Sources */,
 				5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */,
+				508A78DE23E48ECE00B5DD89 /* NotificationToken.swift in Sources */,
 				50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */,
+				508A78E823E4924800B5DD89 /* Store.swift in Sources */,
 				5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */,
 				5078A41520E364F400C4A686 /* Version.swift in Sources */,
 				5038BB9623E1B06300488536 /* UpdateViewController.swift in Sources */,
 				50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */,
+				508A78EA23E4925E00B5DD89 /* Event.swift in Sources */,
+				508A78E623E4919A00B5DD89 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,9 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D1A6BD23E49F0100EF5FBA /* ReplaceUpdatesReducerTests.swift in Sources */,
+				50D1A6C623E4A42B00EF5FBA /* StoreSubscriberTests.swift in Sources */,
+				50D1A6BF23E4A3B500EF5FBA /* TestHelpers.swift in Sources */,
 				50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */,
 				5078A41720E3652B00C4A686 /* VersionTests.swift in Sources */,
+				50D1A6C123E4A3D800EF5FBA /* ShowNextReducerTests.swift in Sources */,
 				50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */,
+				50D1A6C323E4A3F800EF5FBA /* ShowPreviousReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

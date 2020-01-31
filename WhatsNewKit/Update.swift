@@ -1,6 +1,6 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public struct Update {
+public struct Update: Equatable, Comparable {
     public let version: Version
     public let windowTitle: String?
     public let view: UpdateView
@@ -39,4 +39,14 @@ extension Update {
                   windowTitle: windowTitle,
                   view: viewContainer.updateView)
     }
+}
+
+public func == (lhs: Update, rhs: Update) -> Bool {
+    return lhs.version == rhs.version
+        && lhs.windowTitle == rhs.windowTitle
+        && lhs.view == rhs.view
+}
+
+public func < (lhs: Update, rhs: Update) -> Bool {
+    return lhs.version < rhs.version
 }

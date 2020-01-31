@@ -34,7 +34,7 @@ class AppWindowController: NSWindowController {
     }
 
     @IBAction func saveUpdate(_ sender: Any) {
-        guard let latest = updates.sorted(by: { $0.version < $1.version }).first else { return }
+        guard let latest = updates.sorted().first else { return }
         latest.saveAsLatest(userDefaults: UserDefaults.standard)
         updateLabels()
     }
