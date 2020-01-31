@@ -2,7 +2,7 @@
 
 import Cocoa
 
-class WhatsNewWindowController: NSWindowController {
+internal class WhatsNewWindowController: NSWindowController {
 
     private static var _shared: WhatsNewWindowController?
     static var shared: WhatsNewWindowController {
@@ -23,6 +23,7 @@ class WhatsNewWindowController: NSWindowController {
         window.collectionBehavior = .canJoinAllSpaces
         window.level = .modalPanel
         window.backgroundColor = .textBackgroundColor
+        window.isRestorable = false
 
         self.init(window: window)
 
@@ -34,9 +35,10 @@ class WhatsNewWindowController: NSWindowController {
         window?.center()
     }
 
-    func show(update: Update) {
+    func show(updates: [Update]) {
+        guard !updates.isEmpty else { return }
         showWindow(self)
-        window?.contentView = update.view
+        window?.contentView = updates[0].view
 
         if let windowTitle = update.windowTitle {
             window?.title = windowTitle

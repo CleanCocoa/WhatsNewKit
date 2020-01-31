@@ -39,7 +39,7 @@ public struct WhatsNew {
 
     public func display(updates: [Update]) {
         guard updates.isEmpty == false else { return }
-        WhatsNewWindowController.shared.show(update: updates[0])
+        WhatsNewWindowController.shared.show(updates: updates)
     }
 
     public func register(update: Update, userDefaults: UserDefaults = .standard) {
