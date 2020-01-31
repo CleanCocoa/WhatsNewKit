@@ -25,15 +25,15 @@ fileprivate func reduceUpdates(event: Event, state: State) -> [Update] {
 fileprivate func reduceSelectedIndex(event: Event, state: State) -> Int? {
     switch event {
     case .replaceUpdates(let newUpdates):
-        return newUpdates.isEmpty ? nil : 0
+        return newUpdates.isNotEmpty ? 0 : nil
 
     case .showNext:
-        guard !state.updates.isEmpty else { return nil }
+        guard state.updates.isNotEmpty else { return nil }
         return min(state.updates.count - 1,
                    state.selectedIndex.map { $0 + 1 } ?? 0)
 
     case .showPrevious:
-        guard !state.updates.isEmpty else { return nil }
+        guard state.updates.isNotEmpty else { return nil }
         return max(0,
                    state.selectedIndex.map { $0 - 1 } ?? 0)
     }

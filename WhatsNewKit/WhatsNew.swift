@@ -38,8 +38,8 @@ public struct WhatsNew {
     }
 
     public func display(updates: [Update]) {
-        guard updates.isEmpty == false else { return }
-        WhatsNewWindowController.shared.show(updates: updates)
+        guard updates.isNotEmpty else { return }
+        self.wiring = Wiring(updates: updates)
     }
 
     public func register(update: Update, userDefaults: UserDefaults = .standard) {
