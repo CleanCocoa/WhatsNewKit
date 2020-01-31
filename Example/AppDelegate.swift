@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // Load all the `UpdateView`s from their Nibs
     lazy var updates = updateVersions.map { version in
-        Update(version: version, viewContainer: UpdateViewController(version: version))
+        Update(version: version, viewContainer: UpdateViewFromNib(version: version))
     }
 
     lazy var whatsNew: WhatsNew = {
@@ -37,7 +37,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
         appWindowController.whatsNew = whatsNew
         appWindowController.updates = updates
 
