@@ -22,6 +22,7 @@
 		5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */; };
 		5078A41B20E3662700C4A686 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41A20E3662700C4A686 /* Update.swift */; };
 		5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078A41E20E3683100C4A686 /* UpdateView.swift */; };
+		508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */; };
 		50A86F2920E36E60004CBA4B /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2820E36E60004CBA4B /* WhatsNew.swift */; };
 		50A86F2F20E37252004CBA4B /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */; };
 		50A86F3120E3796C004CBA4B /* UpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A86F3020E3796C004CBA4B /* UpdateTests.swift */; };
@@ -81,6 +82,7 @@
 		5078A41820E3657300C4A686 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 		5078A41A20E3662700C4A686 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		5078A41E20E3683100C4A686 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePaginationController.swift; sourceTree = "<group>"; };
 		50A86F2820E36E60004CBA4B /* WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNew.swift; sourceTree = "<group>"; };
 		50A86F2E20E37252004CBA4B /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		50A86F3020E3796C004CBA4B /* UpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTests.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				50A86F3320E380C7004CBA4B /* WhatsNewWindowController.swift */,
+				508A78D923E41F4C00B5DD89 /* UpdatePaginationController.swift */,
 				5078A41E20E3683100C4A686 /* UpdateView.swift */,
 				5038BB9523E1B06300488536 /* UpdateViewController.swift */,
 			);
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5078A41B20E3662700C4A686 /* Update.swift in Sources */,
+				508A78DA23E41F4C00B5DD89 /* UpdatePaginationController.swift in Sources */,
 				5078A41F20E3683100C4A686 /* UpdateView.swift in Sources */,
 				50A86F3520E380C7004CBA4B /* WhatsNewWindowController.swift in Sources */,
 				5078A41920E3657300C4A686 /* Collection+safeSubscript.swift in Sources */,

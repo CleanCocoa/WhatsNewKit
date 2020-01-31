@@ -30,6 +30,12 @@ internal class WhatsNewWindowController: NSWindowController {
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(_:)), name: NSWindow.willCloseNotification, object: window)
     }
 
+    lazy var paginationController: UpdatePaginationController = {
+        let paginationController = UpdatePaginationController()
+        paginationController.delegate = self
+        return paginationController
+    }()
+
     override func showWindow(_ sender: Any?) {
         super.showWindow(sender)
         window?.center()
@@ -38,7 +44,21 @@ internal class WhatsNewWindowController: NSWindowController {
     func show(updates: [Update]) {
         guard !updates.isEmpty else { return }
         showWindow(self)
-        window?.contentView = updates[0].view
+        paginationController.show(updates: updates)
+    }
+
+    @objc func windowWillClose(_ notification: Notification) {
+        WhatsNewWindowController._shared = nil
+    }
+}
+
+extension WhatsNewWindowController: UpdatePaginationControllerDelegate {
+    func updatePaginationController(_ updatePaginationController: UpdatePaginationController, didSelectUpdate update: Update) {
+        show(update: update)
+    }
+
+    private func show(update: Update) {
+        self.window?.contentView = update.view
 
         if let windowTitle = update.windowTitle {
             window?.title = windowTitle
@@ -48,9 +68,5 @@ internal class WhatsNewWindowController: NSWindowController {
             window?.title = NSLocalizedString("What's New", comment: "What's New window title")
             window?.titleVisibility = .hidden
         }
-    }
-
-    @objc func windowWillClose(_ notification: Notification) {
-        WhatsNewWindowController._shared = nil
     }
 }
