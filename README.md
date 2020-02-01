@@ -35,7 +35,29 @@ func applicationDidFinishLaunching(_ aNotification: Notification) {
 }
 ```
 
-## How to Use
+## Features
+
+### Keyboard controls
+
+- Use arrow keys to navigate
+- Use Escape or <kbd>⌘</kbd>+<kbd>.</kbd> to close
+
+### Pagination controls stay put
+
+<div align="center">
+    <img src="assets/loop.gif">
+</div>
+
+The window may change its size to accommodate each update view, but the navigation controls stay in place on screen so your users don't have to awkwardly hunt down the "Next" button again and again.
+
+### Dark and Light Mode
+
+|       | v2.2.0                       | v1.8.0                       |
+| ----- | ---------------------------- | ---------------------------- |
+| Dark  | ![](assets/dark_v2_2_0.png)  | ![](assets/dark_v1_8_0.png)  |
+| Light | ![](assets/light_v2_2_0.png) | ![](assets/light_v1_8_0.png) |
+
+## How to Use WhatsNewKit
 
 ### Behavior
 
@@ -44,7 +66,7 @@ The main intention of WhatsNewKit is to display update information to existing u
 1. Upon first launch of your app, WhatsNewKit is supposed to _not_ display a "What's New" window. 
 2. Existing users will only get _new_ update notices exactly _once_.
 
-This works with 1 or multiple updates that have been missed.
+This works with one or multiple updates that have been missed.
 
 ### Set Up Details
 
