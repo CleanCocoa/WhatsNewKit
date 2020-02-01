@@ -1,13 +1,14 @@
 //  Copyright © 2020 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
+import class AppKit.NSView
 @testable import WhatsNewKit
 
-class UpdateViewDouble: UpdateView { }
+class NSViewDouble: NSView { }
 
 extension Update {
     init(version major: Int, _ minor: Int, _ patch: Int) {
         self.init(version: Version(major, minor, patch),
-                  view: UpdateViewDouble())
+                  view: NSViewDouble())
     }
 }
 
