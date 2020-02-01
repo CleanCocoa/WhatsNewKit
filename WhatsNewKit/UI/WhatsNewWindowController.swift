@@ -33,6 +33,7 @@ internal class WhatsNewWindowController: NSWindowController {
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: window)
+        window?.close()
     }
 
     @objc func windowWillClose(_ notification: Notification) {
