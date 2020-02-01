@@ -1,6 +1,6 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public struct WhatsNew {
+public final class WhatsNew {
     public struct Configuration {
         public let isFirstLaunch: Bool
         public let appVersion: Version
@@ -37,9 +37,11 @@ public struct WhatsNew {
         display(updates: notOutdatedUpdates)
     }
 
+    private var wiring: Wiring?
+
     public func display(updates: [Update]) {
-        guard updates.isEmpty == false else { return }
-        WhatsNewWindowController.shared.show(update: updates[0])
+        guard updates.isNotEmpty else { return }
+        self.wiring = Wiring(updates: updates)
     }
 
     public func register(update: Update, userDefaults: UserDefaults = .standard) {

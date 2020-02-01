@@ -1,11 +1,11 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public struct Update {
+public struct Update: Equatable, Comparable {
     public let version: Version
     public let windowTitle: String?
-    public let view: UpdateView
+    public let view: NSView
 
-    public init(version: Version, windowTitle: String? = nil, view: UpdateView) {
+    public init(version: Version, windowTitle: String? = nil, view: NSView) {
         self.version = version
         self.windowTitle = windowTitle
         self.view = view
@@ -34,9 +34,19 @@ extension Version {
 }
 
 extension Update {
-    public init(version: Version, windowTitle: String? = nil, viewContainer: UpdateViewContainer) {
+    public init(version: Version, windowTitle: String? = nil, viewContainer: ViewContainer) {
         self.init(version: version,
                   windowTitle: windowTitle,
-                  view: viewContainer.updateView)
+                  view: viewContainer.view)
     }
+}
+
+public func == (lhs: Update, rhs: Update) -> Bool {
+    return lhs.version == rhs.version
+        && lhs.windowTitle == rhs.windowTitle
+        && lhs.view == rhs.view
+}
+
+public func < (lhs: Update, rhs: Update) -> Bool {
+    return lhs.version < rhs.version
 }

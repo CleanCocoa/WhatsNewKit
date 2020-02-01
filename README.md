@@ -1,12 +1,16 @@
 # WhatsNewKit
 
-![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
+![Swift 5.x](https://img.shields.io/badge/Swift-5.x-blue.svg?style=flat)
 ![Version](https://img.shields.io/github/tag/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![License](https://img.shields.io/github/license/CleanCocoa/WhatsNewKit.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-A convenient model to talk about `Update`s and `Version`s, a window controller to display your update notices in, and `UserDefaults` extensions so the user only sees the notices when she needs to.
+What's in here?
+
+- A convenient model to talk about `Update`s and `Version`s, 
+- a UI to display your update notices in, 
+- and `UserDefaults` extensions so the user only sees the messages when she needs to.
 
 ## Overview 
 
@@ -31,7 +35,29 @@ func applicationDidFinishLaunching(_ aNotification: Notification) {
 }
 ```
 
-## How to Use
+## Features
+
+### Keyboard controls
+
+- Use arrow keys to navigate
+- Use Escape or <kbd>⌘</kbd>+<kbd>.</kbd> to close
+
+### Pagination controls stay put
+
+<div align="center">
+    <img src="assets/loop.gif">
+</div>
+
+The window may change its size to accommodate each update view, but the navigation controls stay in place on screen so your users don't have to awkwardly hunt down the "Next" button again and again.
+
+### Dark and Light Mode
+
+|       | v2.2.0                       | v1.8.0                       |
+| ----- | ---------------------------- | ---------------------------- |
+| Dark  | ![](assets/dark_v2_2_0.png)  | ![](assets/dark_v1_8_0.png)  |
+| Light | ![](assets/light_v2_2_0.png) | ![](assets/light_v1_8_0.png) |
+
+## How to Use WhatsNewKit
 
 ### Behavior
 
@@ -39,6 +65,8 @@ The main intention of WhatsNewKit is to display update information to existing u
 
 1. Upon first launch of your app, WhatsNewKit is supposed to _not_ display a "What's New" window. 
 2. Existing users will only get _new_ update notices exactly _once_.
+
+This works with one or multiple updates that have been missed.
 
 ### Set Up Details
 
@@ -50,16 +78,43 @@ You can create **`WhatsNew.Configuration`** in 3 ways:
 - Reading values from `UserDefaults` and `Bundle`:  `.init(userDefaults:appBundle:)`
 - Reading values from the main bundle and standard user defaults: `.standardMain`
 
-To set up **the current `Update`,** you use `Update.init(version:windowTitle:view:)`. The parameter `windowTitle` is optional. You can use any view, as long as it descends from `UpdateView` (mostly for upcoming feature compatibility). That view will be used as the `NSWindow.contentView` touching all window edges, so you can design it the way you like. 
+To create an `Update`, you use one of its designated initializers:
 
-Armed with a `Configuration` and `Update` instance, you can create a `WhatsNew` instance and make it `displayIfNeededAndRegister(update:)`.
+- `Update.init(version:windowTitle:view:)` to pass it any `NSView` directly, or
+- `Update.init(version:windowTitle:viewContainer:)` to pass it a `ViewContainer`-conforming object, like a `NSViewController` you get from a Nib. (See below for Nib details.)
+
+The parameter `windowTitle` is optional in all of these. 
+
+The resulting view will be displayed in the content section of the `NSWindow` of this framework
+
+Armed with a `Configuration` and `Update` instances, you can create a `WhatsNew` instance and make it `displayIfNeededAndRegister(updates:)`.
+
+> **⚠️ Heads Up with the View Design ⚠️** Your views need to be laid-out very strict so that inserting them into the window using Auto Layout affects the window size appropriately. If your size or position constraints have a priority of `NSLayoutPriorityWindowSizeStayPut`, which is known to be `500`, then the window will not size to fit the content. I found multi-line labels to be especially cumbersome and recommend you set an explicit size if you can.  
+
+### How to Create Your View
+
+You can pass any `NSView` subclass to `Update.init(version:windowTitle:view:)`, no matter if it's loaded from a Storyboard, Nib, or created in code.
+
+Nibs work especially well! 🎉
+
+Look at the example app in this project for inspiration. 
+
+The trick is this:
+
+1. Create a  `UpdateViewFromNib` wrapper: It loads a `NSViewController` from a Nib and obtains its main view.
+    - `UpdateViewFromNib.init(nibName:bundle:)` behaves like the `NSViewController` initializer. 
+    - `UpdateViewFromNib.init(version:bundle:)` assumes the Nib file is called `WhatsNew_vX_Y_Z`, where X, Y, and Z are the major, minor, and patch version component of your `Version` object respectively. (`Version(1,8,0)` resolves to `WhatsNew_v1_8_0.xib`.)
+2. Use the variant `Update.init(version:windowTitle:viewContainer:)` to pass the `UpdateViewFromNib` object in as the `viewContainer` directly for your convenience.
 
 ### Displaying the Update Notice
 
-You can use `WhatsNew.display(update:)` to show the latest version information. This could be used in a menu bar item, for example.
+You can offer your app users an affordance, e.g. a menu item, to display what's new regardless of the setting.
 
-Use `WhatsNew.displayIfNeeded(update:)` to let WhatsNewKit figure out if the user needs to see the update info.
+- Use `WhatsNew.display(update:)` to show exactly one version information.
+- Use `WhatsNew.display(updates:)` (note the plural!) to show multiple version informations.
+
+Use `WhatsNew.displayIfNeeded(update:)` or `WhatsNew.displayIfNeeded(updates:) `to let WhatsNewKit figure out if the user needs to see any update info.
 
 ## License
 
-Copyright (c) 2019 Christian Tietze. Distributed under the MIT License.
+Copyright (c) 2019--2020 Christian Tietze. Distributed under the MIT License.

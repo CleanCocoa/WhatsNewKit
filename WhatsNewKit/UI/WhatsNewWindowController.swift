@@ -1,54 +1,89 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
 import Cocoa
+import Carbon.HIToolbox
 
-class WhatsNewWindowController: NSWindowController {
+protocol WhatsNewWindowControllerEventHandler: class {
+    func whatsNewWindowControllerWillClose(_ windowController: WhatsNewWindowController)
+}
 
-    private static var _shared: WhatsNewWindowController?
-    static var shared: WhatsNewWindowController {
-        if _shared == nil {
-            _shared = WhatsNewWindowController()
-        }
-        return _shared!
-    }
+internal class WhatsNewWindowController: NSWindowController {
+
+    weak var eventHandler: WhatsNewWindowControllerEventHandler?
+
+    @IBOutlet var updateContainerViewController: UpdateContainerViewController!
+    @IBOutlet var updatePaginationViewController: UpdatePaginationViewController!
 
     convenience init() {
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 500, height: 400),
-            styleMask: [.fullSizeContentView, .closable, .titled],
-            backing: .buffered,
-            defer: true)
-        window.titlebarAppearsTransparent = true
+        self.init(windowNibName: "WhatsNewWindowController")
+    }
+
+    override func windowDidLoad() {
+        super.windowDidLoad()
+
+        guard let window = self.window else { return }
+
         window.isMovableByWindowBackground = true
         window.collectionBehavior = .canJoinAllSpaces
         window.level = .modalPanel
         window.backgroundColor = .textBackgroundColor
 
-        self.init(window: window)
-
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(_:)), name: NSWindow.willCloseNotification, object: window)
     }
 
-    override func showWindow(_ sender: Any?) {
-        super.showWindow(sender)
-        window?.center()
-    }
-
-    func show(update: Update) {
-        showWindow(self)
-        window?.contentView = update.view
-
-        if let windowTitle = update.windowTitle {
-            window?.title = windowTitle
-            window?.titleVisibility = .visible
-        } else {
-            // Set a hidden title for accessibility and so window managers don't show empty entries.
-            window?.title = NSLocalizedString("What's New", comment: "What's New window title")
-            window?.titleVisibility = .hidden
-        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: window)
+        window?.close()
     }
 
     @objc func windowWillClose(_ notification: Notification) {
-        WhatsNewWindowController._shared = nil
+        eventHandler?.whatsNewWindowControllerWillClose(self)
+    }
+}
+
+extension WhatsNewWindowController: UpdateWindow {
+    func show() {
+        self.showWindow(nil)
+        self.window?.makeKeyAndOrderFront(self)
+    }
+}
+
+// MARK: - Keyboard shortcuts
+
+extension WhatsNewWindowController {
+    override func cancelOperation(_ sender: Any?) {
+        NSApp.sendAction(#selector(UpdatePaginationViewController.close(_:)),
+                         to: updatePaginationViewController,
+                         from: self)
+    }
+
+    @objc func cancel(_ sender: Any?) {
+        NSApp.sendAction(#selector(UpdatePaginationViewController.close(_:)),
+                         to: updatePaginationViewController,
+                         from: self)
+    }
+
+    override func keyDown(with event: NSEvent) {
+        switch event.character {
+        case NSRightArrowFunctionKey:
+            NSApp.sendAction(#selector(UpdatePaginationViewController.showNextUpdate(_:)),
+                             to: updatePaginationViewController,
+                             from: self)
+
+        case NSLeftArrowFunctionKey:
+            NSApp.sendAction(#selector(UpdatePaginationViewController.showPreviousUpdate(_:)),
+                             to: updatePaginationViewController,
+                             from: self)
+
+        default:
+            super.keyDown(with: event)
+        }
+    }
+}
+
+extension NSEvent {
+    fileprivate var character: Int {
+        let str = charactersIgnoringModifiers!.utf16
+        return Int(str[str.startIndex])
     }
 }

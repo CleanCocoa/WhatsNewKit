@@ -25,6 +25,10 @@ class AppWindowController: NSWindowController {
         isFirstLaunchCheckbox.state = UserDefaults.standard.isFirstLaunch ? .on : .off
     }
 
+    @IBAction func forceShow1Update(_ sender: Any) {
+        whatsNew.display(update: updates[0])
+    }
+
     @IBAction func forceShowWhatsNew(_ sender: Any) {
         whatsNew.display(updates: updates)
     }
@@ -34,7 +38,7 @@ class AppWindowController: NSWindowController {
     }
 
     @IBAction func saveUpdate(_ sender: Any) {
-        guard let latest = updates.sorted(by: { $0.version < $1.version }).first else { return }
+        guard let latest = updates.sorted().first else { return }
         latest.saveAsLatest(userDefaults: UserDefaults.standard)
         updateLabels()
     }

@@ -4,7 +4,7 @@ import XCTest
 import WhatsNewKit
 
 private func update(version: Version) -> Update {
-    let irrelevantView: UpdateView = UpdateView()
+    let irrelevantView: NSView = NSViewDouble()
     return Update(version: version, windowTitle: "irrelevant", view: irrelevantView)
 }
 
