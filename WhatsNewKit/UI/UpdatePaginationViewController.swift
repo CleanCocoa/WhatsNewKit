@@ -29,9 +29,18 @@ class UpdatePaginationViewController: NSViewController {
 }
 
 extension UpdatePaginationViewController: PaginationView {
-    func configure(enablePrevious: Bool, enableNext: Bool, enableClose: Bool) {
-        previousButton.isEnabled = enablePrevious
-        nextButton.isEnabled = enableNext
-        closeButton.isEnabled = enableClose
+    func configure(previous: PaginationControlConfiguration,
+                   next: PaginationControlConfiguration,
+                   close: PaginationControlConfiguration) {
+        previousButton.configure(previous)
+        nextButton.configure(next)
+        closeButton.configure(close)
+    }
+}
+
+extension NSButton {
+    fileprivate func configure(_ configuration: PaginationControlConfiguration) {
+        self.isEnabled = configuration.isEnabled
+        self.isHidden = configuration.isHidden
     }
 }
