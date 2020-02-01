@@ -15,7 +15,7 @@ func reduce(event: Event, state: State) -> State {
 fileprivate func reduceUpdates(event: Event, state: State) -> [Update] {
     switch event {
     case .replaceUpdates(let newUpdates):
-        return newUpdates.sorted()
+        return newUpdates.sorted().reversed()
     case .showNext,
          .showPrevious:
         return state.updates
