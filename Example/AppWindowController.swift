@@ -25,6 +25,10 @@ class AppWindowController: NSWindowController {
         isFirstLaunchCheckbox.state = UserDefaults.standard.isFirstLaunch ? .on : .off
     }
 
+    @IBAction func forceShow1Update(_ sender: Any) {
+        whatsNew.display(update: updates[0])
+    }
+
     @IBAction func forceShowWhatsNew(_ sender: Any) {
         whatsNew.display(updates: updates)
     }
