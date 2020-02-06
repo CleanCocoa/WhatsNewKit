@@ -27,10 +27,7 @@ class UpdateContainerViewController: NSViewController, UpdateContainerView {
             window.center()
         } else {
             // Window should remain stuck at its bottom position so the navigation buttons do not move
-            let recenteredOrigin = NSPoint(
-                x: window.frame.origin.x + sizeDifference.width / 2,
-                y: window.frame.origin.y - sizeDifference.height)
-            window.setFrameOrigin(recenteredOrigin)
+            window.recenter(sizeDifference: sizeDifference)
         }
     }
 
@@ -55,6 +52,13 @@ extension NSWindow {
         return NSSize(
             width: oldWindowFrame.width - newWindowFrame.width,
             height: oldWindowFrame.height - newWindowFrame.height)
+    }
+
+    fileprivate func recenter(sizeDifference: NSSize) {
+        let recenteredOrigin = NSPoint(
+            x: self.frame.origin.x + sizeDifference.width / 2,
+            y: self.frame.origin.y - sizeDifference.height)
+        self.setFrameOrigin(recenteredOrigin)
     }
 }
 
