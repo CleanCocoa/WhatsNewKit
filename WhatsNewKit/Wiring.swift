@@ -1,6 +1,6 @@
 //  Copyright © 2020 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-protocol WiringDelegate: class {
+protocol WiringDelegate: AnyObject {
     func tearDownWiring(_ wiring: Wiring)
 }
 

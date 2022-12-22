@@ -3,7 +3,7 @@
 import Cocoa
 import Carbon.HIToolbox
 
-protocol WhatsNewWindowControllerEventHandler: class {
+protocol WhatsNewWindowControllerEventHandler: AnyObject {
     func whatsNewWindowControllerWillClose(_ windowController: WhatsNewWindowController)
 }
 

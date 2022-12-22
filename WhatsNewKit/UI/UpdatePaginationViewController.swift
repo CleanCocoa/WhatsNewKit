@@ -2,7 +2,7 @@
 
 import AppKit
 
-protocol UpdatePaginationViewControllerEventHandler: class {
+protocol UpdatePaginationViewControllerEventHandler: AnyObject {
     func showPrevious()
     func showNext()
     func close()
